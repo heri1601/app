@@ -3,9 +3,13 @@
 
 var connect = require('connect');
 var http = require('http');
+var finalhandler = require('finalhandler')
+var serveStatic = require('serve-static')
+var fs = require('fs')
 
 var app = connect();
 
+//var serve = serveStatic('public/ftp', {'index': ['index.html', 'index.htm']})
 // gzip/deflate outgoing responses
 //var compression = require('compression');
 //app.use(compression());
@@ -44,9 +48,28 @@ app.use('/bar', function barMiddleware(req, res, next) {
 
 
 
+app.use('/js', function barMiddleware(req, res, next) {
+  // req.url starts with "/bar"
+  //next();
+  res.end('bar!\n');
+});
+
+
+
 //Index
 app.use(function(req, res){
-  res.end('Hello from Connect!\n');
+  //var path = require('path');
+  //global.appRoot = path.resolve(__dirname);
+  //res.end('Hello from Connect!\n'+global.appRoot);
+//  res.sendfile('a.txt');
+
+  var done = finalhandler(req, res)
+  fs.readFile('index.html', function (err, buf) {
+    if (err) return done(err)
+    res.setHeader('Content-Type', 'text/html')
+    res.end(buf)
+  })
+
 });
 
 //create node.js http server and listen on port
