@@ -69,6 +69,22 @@ app.get('/obtenerProductos', urlencodedParser, function (req, res) {
 })
 
 
+app.get('/modificarProducto', urlencodedParser, function (req, res) {
+	convertParameters(req);
+	var modelo =new Modelo();
+	var request={}
+	request.id=req.query.inIDProducto;
+	request.producto=req.query.inProducto;
+	request.precio=req.query.inPrecio;
+	request.imagen=req.query.inImagen;
+	//Validations?
+	
+	var response=modelo.modificarProducto(request.id,request.producto,request.precio,request.imagen);
+	res.end();
+	
+})
+
+
 
 
 
@@ -199,6 +215,11 @@ class Modelo {
 		var q= dao.obtenerProductosF();
 		return q;
 		}
+		
+	modificarProducto(id,producto,precio,imagen){
+		var dao=new DAO();
+		return dao.modificarProducto(id,producto,precio,imagen);
+		}
 }
 
 
@@ -235,9 +256,6 @@ class DAO {
 	
 	
 	registrarProducto(inProducto,inPrecio,inImagen){
-		console.log("registrando negocio");
-		
-		
 		var MongoClient = require('mongodb').MongoClient;
 		var url = "mongodb://localhost:27017/";
 
@@ -252,6 +270,36 @@ class DAO {
 		  });
 		}); 
 		}//Registrar
+		
+		
+		modificarProducto(in_id,in_producto,in_precio,in_imagen){
+			var MongoClient = require('mongodb').MongoClient;
+			var url = "mongodb://localhost:27017/";
+			var ObjectID = require('mongodb').ObjectID;
+
+			MongoClient.connect(url, { useNewUrlParser: true },function(err, db) {
+			  if (err) throw err;
+			  var dbo = db.db("liverpool");
+			  console.log("Updating the id "+in_id+"  "+in_producto);
+			  dbo.collection("productos").updateOne(
+										   { "_id": ObjectID(in_id) },
+										   {
+											 $set: {
+											   "producto": in_producto,
+											   "precio": in_precio,
+											   "imagen": in_imagen
+											 }
+										   },
+										   function(err, res) {
+												if (err) throw err;
+												console.log("1 document updated");
+												db.close();
+											  }
+										);
+
+			});
+			return 1;
+		}//Modificar
 		
 	obtenerProductos(inProducto,inPrecio,inImagen){
 		var that=this;
