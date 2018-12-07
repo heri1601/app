@@ -37,7 +37,12 @@ app.post('/login', urlencodedParser, function (req, res) {
 
 
 app.get('/', urlencodedParser, function (req, res) {
-  res.send('Index')
+  res.sendfile('./public/index.html')
+})
+
+
+app.get('/js', urlencodedParser, function (req, res) {
+  res.sendfile('./public/index.js')
 })
 
 
