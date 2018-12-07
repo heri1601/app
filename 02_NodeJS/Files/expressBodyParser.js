@@ -60,8 +60,12 @@ app.get('/obtenerProductos', urlencodedParser, function (req, res) {
 	convertParameters(req);
 	
 	var modelo =new Modelo();
-	var productos=modelo.obtenerProductos();
-	res.end(JSON.stringify(productos));
+	modelo.obtenerProductos().then(function(productos){
+			res.end(JSON.stringify(productos));
+			res.end();
+		});
+	
+	
 })
 
 
@@ -189,10 +193,11 @@ class Modelo {
 		dao.registrarProducto(inProducto,inPrecio,inImagen);
 		}
 		
-	obtenerProductos(){
+	async obtenerProductos(){
 		var dao=new DAO();
-		var query=dao.obtenerProductos();
-		return query;
+		await dao.obtenerProductos();
+		var q= dao.obtenerProductosF();
+		return q;
 		}
 }
 
@@ -225,7 +230,7 @@ class Modelo {
 
 class DAO {
   constructor() {
-
+		this.arregloProductos=null;
 	}
 	
 	
@@ -249,28 +254,33 @@ class DAO {
 		}//Registrar
 		
 	obtenerProductos(inProducto,inPrecio,inImagen){
-		var arregloProductos=null;
+		var that=this;
 		var MongoClient = require('mongodb').MongoClient;
 		var url = "mongodb://localhost:27017/";
 
-		MongoClient.connect(url,{ useNewUrlParser: true }, function(err, db) {
-		var dbo = db.db("liverpool");
-		//MongoClient.connect(url, function(err, db) {
-		  if (err) throw err;
-		  //db.collection("productos").find({ estado: { $gt: 0 } }).toArray(function(err, result) {
-		  dbo.collection("productos").find({}).toArray(function(err, result) {
-			arregloProductos=result;  
-			console.log(arregloProductos);
-			if (err) throw err;
-			console.log(result);
-			db.close();
-		  });
-		}); 
-		return arregloProductos;
+		return new Promise(function(resolve,reject){
+						MongoClient.connect(url,{ useNewUrlParser: true }, function(err, db) {
+						var dbo = db.db("liverpool");
+						//MongoClient.connect(url, function(err, db) {
+						  if (err) throw err;
+						  //db.collection("productos").find({ estado: { $gt: 0 } }).toArray(function(err, result) {
+						  var productos=dbo.collection("productos").find({}).toArray();
+						  productos.then(function(data){
+							  that.arregloProductos=data;
+							  resolve(data);
+							  });
+						}); 
+						
+			
+			}).then(function(data){
+				return data;
+				});
 		}//obtenerProductos
 	
 	
-	
+	obtenerProductosF(){
+		return this.arregloProductos;
+		}
 	
 	
 	
