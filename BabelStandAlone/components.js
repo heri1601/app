@@ -6,7 +6,7 @@ function Welcome(props) {
 function App() {
   return (
     <div>
-    <form id="myForm">
+    <form id="myForm" action="">
 	<input type="inProduct" />
 	<input type="inPrice" />
 	<input type="file" />
