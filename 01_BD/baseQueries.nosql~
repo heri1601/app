@@ -1,0 +1,15 @@
+//createTable
+//insert into products (user_id,age,status) values ("abc123",55,) 
+db.products.insertOne( {
+    user_id: "abc123",
+    age: 55,
+    status: "A"
+ } )
+
+
+//select * from products
+// Requires official MongoShell 3.6+
+use liverpool;
+db.getCollection("products").find({});
+
+

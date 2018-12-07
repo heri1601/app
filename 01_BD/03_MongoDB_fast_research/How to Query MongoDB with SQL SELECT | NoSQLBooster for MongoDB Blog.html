@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html class="gr__mongobooster_com"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  
+  <title>How to Query MongoDB with SQL SELECT | NoSQLBooster for MongoDB Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="By Qinghai | September 12, 2017 With NoSQLBooster for MongoDB, you can run SQL SELECT Query against MongoDB. SQL support includes functions, expressions, aggregation for collections with nested object">
+<meta name="keywords" content="SQL Query">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to Query MongoDB with SQL SELECT">
+<meta property="og:url" content="https://www.nosqlbooster.com/blog/query-mongodb-with-sql/index.html">
+<meta property="og:site_name" content="NoSQLBooster for MongoDB Blog">
+<meta property="og:description" content="By Qinghai | September 12, 2017 With NoSQLBooster for MongoDB, you can run SQL SELECT Query against MongoDB. SQL support includes functions, expressions, aggregation for collections with nested object">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://www.nosqlbooster.com/s3/img/sql-equi-join.png">
+<meta property="og:image" content="https://www.nosqlbooster.com/s3/img/sql-query-basic.png">
+<meta property="og:image" content="https://www.nosqlbooster.com/s3/img/sql-basic-result.png">
+<meta property="og:image" content="https://www.nosqlbooster.com/s3/img/sql-select-fields-order-by.png">
+<meta property="og:image" content="https://www.nosqlbooster.com/s3/img/sql-query-mongodb-json-like.png">
+<meta property="og:image" content="https://www.nosqlbooster.com/s3/img/sql-query-fluent-api.png">
+<meta property="og:image" content="https://www.nosqlbooster.com/s3/img/sql-query-concat-datestring.png">
+<meta property="og:image" content="https://www.nosqlbooster.com/s3/img/sql-query-explain.png">
+<meta property="og:image" content="https://www.nosqlbooster.com/s3/img/sql-snippet-daterange.gif">
+<meta property="og:updated_time" content="2018-10-25T03:09:17.048Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="How to Query MongoDB with SQL SELECT">
+<meta name="twitter:description" content="By Qinghai | September 12, 2017 With NoSQLBooster for MongoDB, you can run SQL SELECT Query against MongoDB. SQL support includes functions, expressions, aggregation for collections with nested object">
+<meta name="twitter:image" content="https://www.nosqlbooster.com/s3/img/sql-equi-join.png">
+  
+    <link rel="alternate" href="https://mongobooster.com/blog/rss2.xml" title="NoSQLBooster for MongoDB Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="https://mongobooster.com/favicon.ico">
+  
+  
+    <link href="How%20to%20Query%20MongoDB%20with%20SQL%20SELECT%20|%20NoSQLBooster%20for%20MongoDB%20Blog_files/css.css" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="How%20to%20Query%20MongoDB%20with%20SQL%20SELECT%20|%20NoSQLBooster%20for%20MongoDB%20Blog_files/style.css">
+  
+
+  
+<link href="How%20to%20Query%20MongoDB%20with%20SQL%20SELECT%20|%20NoSQLBooster%20for%20MongoDB%20Blog_files/all.css" rel="stylesheet">
+
+<style type="text/css">.fancybox-margin{margin-right:14px;}</style></head>
+
+<body data-gr-c-s-loaded="true">
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="https://mongobooster.com/blog/" id="logo">NoSQLBooster for MongoDB Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="https://mongobooster.com/blog/" id="subtitle">The Smartest IDE for MongoDB 2.6-4.0</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="https://www.nosqlbooster.com/">Home</a>
+        
+          <a class="main-nav-link" href="https://mongobooster.com/blog/archives/">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="https://mongobooster.com/blog/rss2.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit"></button><input type="hidden" name="sitesearch" value="https://www.nosqlbooster.com/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-query-mongodb-with-sql" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="https://mongobooster.com/blog/query-mongodb-with-sql/" class="article-date">
+  <time datetime="2017-09-06T01:00:01.000Z" itemprop="datePublished">2017-09-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      How to Query MongoDB with SQL SELECT
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><small>By <a href="https://mongobooster.com/blog/query-mongodb-with-sql/qinghai@nosqlbooster.com">Qinghai</a> | September 12, 2017</small></p>
+<p>With NoSQLBooster for MongoDB, you can run SQL SELECT Query against 
+MongoDB. SQL support includes functions, expressions, aggregation for 
+collections with nested objects and arrays.<br>See <a href="https://mongobooster.com/featuresForSQL">the features and SQL examples</a> supported by the NoSQLBooster for MongoDB. </p>
+<p>Let’s look at how to use the GROUP BY clause with the SUM function in SQL.</p>
+<p>Instead of writing the MongoDB query which is represented as a JSON-like structure</p>
+<figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">db.employees.aggregate([</span><br><span class="line">    {</span><br><span class="line">        $group: {</span><br><span class="line">            _id: <span class="string">"$department"</span>,</span><br><span class="line">            total: { <span class="attr">$sum</span>: <span class="string">"$salary"</span> }</span><br><span class="line">        },</span><br><span class="line">    }</span><br><span class="line">])</span><br></pre></td></tr></tbody></table></figure>
+<p>You can query MongoDB by using old SQL which you probably already know.</p>
+<figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mb.runSQLQuery(<span class="string">`</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">  SELECT department, SUM(salary) AS total FROM employees GROUP BY department</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">`</span>);</span><br></pre></td></tr></tbody></table></figure>
+<hr>
+<h1><span id="features">Features</span></h1><ul>
+<li>Access data via SQL including WHERE filters, ORDER BY, GROUP BY, HAVING, DISTINCT, LIMIT            </li>
+<li>SQL Functions (COUNT, SUM, MAX, MIN, AVG)            </li>
+<li>SQL Functions (Date, String, Conversion)</li>
+<li>SQL Equi JOIN and Uncorrelated SubQuery</li>
+<li>Aggregation Pipeline Operators as SQL Functions (dateToString, toUpper, split, substr…)</li>
+<li>Provide a programming interface (mb.runSQLQuery) that can be integrated into your script</li>
+<li>Autocomplete for keywords, MongoDB collection names, field names, and SQL functions  </li>
+</ul>
+<p>Please note that MongoDB does not natively support SQL features. The 
+SQL query is validated and translated into a MongoDB query and executed 
+by NoSQLBooster for MongoDB. The Equivalent MongoDB Query can be viewed 
+in the console.log tab.</p>
+<p>It should be mentioned that there is a tutorial on NoSQLBooster SQL 
+Query for MongoDB in the lower left “Samples” pane. With this tutorial, 
+you can learn and understand how to use NoSQLBooster SQL Query for 
+MongoDB. Better yet, all SQL Functions provide the appropriate code 
+snippets and mouse hover information and support code completion.</p>
+<p><a href="https://www.nosqlbooster.com/s3/img/sql-equi-join.png" title="SQL Query for MongoDB Tutorial" class="fancybox" rel="article0"><img src="How%20to%20Query%20MongoDB%20with%20SQL%20SELECT%20|%20NoSQLBooster%20for%20MongoDB%20Blog_files/sql-equi-join.png" alt="SQL Query for MongoDB Tutorial"></a><span class="caption">SQL Query for MongoDB Tutorial</span> </p>
+<hr>
+<h1><span id="getting-started">Getting Started</span></h1><p>For 
+example, the employees’ collection has the following fields including 
+number, first_name, last_name, salary, department, and hire_date.</p>
+<h2><span id="prepare-demo-data">Prepare Demo Data</span></h2><p>Insert 
+the following demo data to MongoDB. Open a shell tab “Command-T” and 
+execute the following script to get the employees collection.</p>
+<figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">db.employees.insert([   </span><br><span class="line">  {<span class="string">"number"</span>:<span class="number">1001</span>,<span class="string">"last_name"</span>:<span class="string">"Smith"</span>,<span class="string">"first_name"</span>:<span class="string">"John"</span>,<span class="string">"salary"</span>:<span class="number">62000</span>,<span class="string">"department"</span>:<span class="string">"sales"</span>, <span class="attr">hire_date</span>:ISODate(<span class="string">"2016-01-02"</span>)},</span><br><span class="line">  {<span class="string">"number"</span>:<span class="number">1002</span>,<span class="string">"last_name"</span>:<span class="string">"Anderson"</span>,<span class="string">"first_name"</span>:<span class="string">"Jane"</span>,<span class="string">"salary"</span>:<span class="number">57500</span>,<span class="string">"department"</span>:<span class="string">"marketing"</span>, <span class="attr">hire_date</span>:ISODate(<span class="string">"2013-11-09"</span>)},</span><br><span class="line">  {<span class="string">"number"</span>:<span class="number">1003</span>,<span class="string">"last_name"</span>:<span class="string">"Everest"</span>,<span class="string">"first_name"</span>:<span class="string">"Brad"</span>,<span class="string">"salary"</span>:<span class="number">71000</span>,<span class="string">"department"</span>:<span class="string">"sales"</span>, <span class="attr">hire_date</span>:ISODate(<span class="string">"2017-02-03"</span>)},</span><br><span class="line">  {<span class="string">"number"</span>:<span class="number">1004</span>,<span class="string">"last_name"</span>:<span class="string">"Horvath"</span>,<span class="string">"first_name"</span>:<span class="string">"Jack"</span>,<span class="string">"salary"</span>:<span class="number">42000</span>,<span class="string">"department"</span>:<span class="string">"marketing"</span>, <span class="attr">hire_date</span>:ISODate(<span class="string">"2017-06-01"</span>)},</span><br><span class="line">])</span><br></pre></td></tr></tbody></table></figure>
+<h2><span id="select-all-fields">Select All Fields</span></h2><p>First, 
+click on employees collection, then click on “SQL Query Tab”  in the tab
+ toolbar or use the “Command-Alt-T” keyboard shortcut. A basic “SELECT *
+ from employees”  is automatically generated for us!  NoSQLBooster for 
+MongoDB also offers a “runSQLQuery” code snippets. Just type a snippet 
+prefix “run”, and press “tab” to insert this snippet. </p>
+<p><a href="https://www.nosqlbooster.com/s3/img/sql-query-basic.png" title="alt text" class="fancybox" rel="article0"><img src="How%20to%20Query%20MongoDB%20with%20SQL%20SELECT%20|%20NoSQLBooster%20for%20MongoDB%20Blog_files/sql-query-basic.png" alt="alt text" title="SQL Query Tab"></a><span class="caption">alt text</span></p>
+<p>Just execute the query by clicking the execute button or use the 
+“Command-Enter” keyboard shortcut. This would produce the result as 
+shown below.</p>
+<p><a href="https://www.nosqlbooster.com/s3/img/sql-basic-result.png" title="alt text" class="fancybox" rel="article0"><img src="How%20to%20Query%20MongoDB%20with%20SQL%20SELECT%20|%20NoSQLBooster%20for%20MongoDB%20Blog_files/sql-basic-result.png" alt="alt text" title="Simple Query Result"></a><span class="caption">alt text</span></p>
+<ul>
+<li>NoSQLBooster for MongoDB provides in-place editing in result tree 
+view. Double-click on any value or array element to edit. Pressing “Esc”
+ return the previous value and exit the editor.</li>
+<li>If you want the results not to be edited directly, you can enable 
+the “read-only” mode by clicking the lock button in the toolbar.</li>
+</ul>
+<h2><span id="select-individual-fields-and-field-name-auto-complete">Select Individual Fields and Field Name Auto-complete</span></h2><p>
+ Let’s fetch the first_name, last_name and salary fields of the 
+employees available in employees table and sort the result in the 
+descending order by salary.</p>
+<p> <a href="https://www.nosqlbooster.com/s3/img/sql-select-fields-order-by.png" title="alt text" class="fancybox" rel="article0"><img src="How%20to%20Query%20MongoDB%20with%20SQL%20SELECT%20|%20NoSQLBooster%20for%20MongoDB%20Blog_files/sql-select-fields-order-by.png" alt="alt text" title="Projection and field auto-complete"></a><span class="caption">alt text</span></p>
+<p> The built-in SQL language service knows all possible completions, 
+SQL functions,  keywords, MongoDB collection names, and field names. The
+ IntelliSense suggestions pop up as you type. You can always manually 
+trigger it with “Ctrl-Shift-Space”}}}. Out of the box, “Ctrl-Space”}}}, 
+“Alt-Space”}}} are also acceptable triggers.</p>
+<h2><span id="view-the-equivalent-mongodb-query">View the Equivalent MongoDB Query</span></h2><p>Just Click on the “console.log/print” tab to show the equivalent MongoDB query:</p>
+<p><a href="https://www.nosqlbooster.com/s3/img/sql-query-mongodb-json-like.png" title="alt text" class="fancybox" rel="article0"><img src="How%20to%20Query%20MongoDB%20with%20SQL%20SELECT%20|%20NoSQLBooster%20for%20MongoDB%20Blog_files/sql-query-mongodb-json-like.png" alt="alt text" title="Equivalent Classic MongoDB query"></a><span class="caption">alt text</span></p>
+<p>As you know, NoSQLBooster for MongoDB supports <a href="https://mongobooster.com/FluentQueryAPI">mongoose-like fluent Query API</a>,
+ Click Menu-&gt; Options -&gt; Translate SQL to MongoDB Shell Script, 
+click “Translate SQL to NoSQLBooster for MongoDB Fluent API”. Re-execute
+ the script,  the equivalent fluent MongoDB query will be shown in the 
+“console.log/print” tab.</p>
+<p><a href="https://www.nosqlbooster.com/s3/img/sql-query-fluent-api.png" title="alt text" class="fancybox" rel="article0"><img src="How%20to%20Query%20MongoDB%20with%20SQL%20SELECT%20|%20NoSQLBooster%20for%20MongoDB%20Blog_files/sql-query-fluent-api.png" alt="alt text" title="Equivalent Fluent MongoDB query"></a><span class="caption">alt text</span></p>
+<h2><span id="use-string-and-date-sql-functions">Use String and Date SQL Functions</span></h2><p>This
+ time, we want to find all employees who are hired this year, and 
+display first_name and last_name as full name. Please enter the 
+following SQL statement and click execute button:</p>
+<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span>  <span class="keyword">concat</span>(<span class="string">"first_name"</span>, <span class="string">' '</span>, <span class="string">"last_name"</span>) <span class="keyword">as</span> fullname,</span><br><span class="line">      dateToString(<span class="string">'%Y-%m-%d'</span>,<span class="string">"hire_date"</span>) <span class="keyword">as</span> hiredate </span><br><span class="line"><span class="keyword">FROM</span> employees </span><br><span class="line"><span class="keyword">WHERE</span> <span class="string">"hire_date"</span> &gt;= <span class="built_in">date</span>(<span class="string">'2017-01-01'</span>)</span><br></pre></td></tr></tbody></table></figure>
+<p>Clicking on the “console.log/print” tab to show the equivalent MongoDB query:</p>
+<figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">db.employees.aggregate(</span><br><span class="line">  [{</span><br><span class="line">      <span class="string">"$match"</span>: {</span><br><span class="line">        <span class="string">"hire_date"</span>: {</span><br><span class="line">          <span class="string">"$gte"</span>: ISODate(<span class="string">"2017-01-01T08:00:00.000+08:00"</span>)</span><br><span class="line">        }</span><br><span class="line">      }</span><br><span class="line">    },</span><br><span class="line">    {</span><br><span class="line">      <span class="string">"$project"</span>: {</span><br><span class="line">        <span class="string">"fullname"</span>: {</span><br><span class="line">          <span class="string">"$concat"</span>: [</span><br><span class="line">            <span class="string">"$first_name"</span>,</span><br><span class="line">            <span class="string">" "</span>,</span><br><span class="line">            <span class="string">"$last_name"</span></span><br><span class="line">          ]</span><br><span class="line">        },</span><br><span class="line">        <span class="string">"hiredate"</span>: {</span><br><span class="line">          <span class="string">"$dateToString"</span>: {</span><br><span class="line">            <span class="string">"format"</span>: <span class="string">"%Y-%m-%d"</span>,</span><br><span class="line">            <span class="string">"date"</span>: <span class="string">"$hire_date"</span></span><br><span class="line">          }</span><br><span class="line">        }</span><br><span class="line">      }</span><br><span class="line">    }</span><br><span class="line">  ])</span><br></pre></td></tr></tbody></table></figure>
+<p><a href="https://www.nosqlbooster.com/s3/img/sql-query-concat-datestring.png" title="alt text" class="fancybox" rel="article0"><img src="How%20to%20Query%20MongoDB%20with%20SQL%20SELECT%20|%20NoSQLBooster%20for%20MongoDB%20Blog_files/sql-query-concat-datestring.png" alt="alt text" title="String and Date Functions"></a><span class="caption">alt text</span></p>
+<p>Let us look at concat function <strong>concat(“first_name”, ‘ ‘, “last_name”)</strong>.
+ The concat function is a MongoDB string aggregation operators. Through 
+mapping SQL functions to MongoDB operators, NoSQLBooster for MongoDB 
+allows you to use all MongoDB aggregation operators as SQL functions in 
+you SQL statement.</p>
+<figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// instead of writing</span></span><br><span class="line">{ <span class="attr">$concat</span>: [ <span class="string">"$first_name"</span>, <span class="string">" "</span>, <span class="string">"last_name"</span> ] }</span><br><span class="line"></span><br><span class="line"><span class="comment">// we write,  </span></span><br><span class="line">concat(<span class="string">"first_name"</span>, <span class="string">' '</span>, <span class="string">"last_name"</span>) <span class="comment">//Double quotes quote field name, Single quotes are for strings</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// or </span></span><br><span class="line">concat(first_name, <span class="string">' '</span>, last_name)  <span class="comment">//allow to omit double quotes</span></span><br></pre></td></tr></tbody></table></figure>
+<ol>
+<li>No $ prefix with MongoDB operator and collection field name.</li>
+<li><strong>Double quotes quote field name. Single quotes are for strings.</strong></li>
+<li>All function names are case-sensitive except for COUNT, SUM, MAX, MIN, AVG.</li>
+<li>We can use the standard SQL comparison operators: =, !=, &lt;&gt;, &lt;, &lt;=, &gt;=, or &gt;.</li>
+</ol>
+<p>The date function converts a string to a MongoDB Date type. 
+NoSQLBooster for MongoDB uses Moment.js to parse date string. When 
+creating a date from a string, Moment.js first check if the string 
+matches the known ISO 8601 formats, Moment.js then check if the string 
+matches the RFC 2822 Date time format before dropping to the fall back 
+of new Date(string) if a known format is not found.</p>
+<p>Please refer to <a href="https://momentjs.com/docs/#/parsing/string/" target="_blank" rel="noopener">Moment.js parse string document</a> to view all supported string formats.</p>
+<figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># An ISO 8601 string requires a date part.</span></span><br><span class="line"></span><br><span class="line">2013-02-08  <span class="comment"># A calendar date part</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#A time part can also be included, separated from the date part by a space or an uppercase T.</span></span><br><span class="line">2013-02-08 09:30         <span class="comment"># An hour and minute time part</span></span><br><span class="line">2013-02-08 09:30:26      <span class="comment"># An hour, minute, and second time part</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#If a time part is included, an offset from UTC can also be included as +-HH:mm, +-HHmm, +-HH or Z.</span></span><br><span class="line"></span><br><span class="line">2017-01-01T08:00:00.000+08:00</span><br><span class="line">2013-02-08 09+07:00            <span class="comment"># +-HH:mm</span></span><br><span class="line">2013-02-08 09:30:26.123+07:00  <span class="comment"># +-HH:mm</span></span><br></pre></td></tr></tbody></table></figure>
+<p>The dateToString is another MongoDB date operator to convert a date 
+object to a string according to a user-specified format. The <a href="https://docs.mongodb.com/manual/reference/operator/aggregation/dateToString/#exp._S_dateToString" target="_blank" rel="noopener">$dateToString</a> expression has the following syntax:<br></p><figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">{ <span class="attr">$dateToString</span>: { <span class="attr">format</span>: &lt;formatString&gt;, date: &lt;dateExpression&gt; } }</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>As SQL functions doesn’t support JSON object parameter, NoSQLBooster 
+for MongoDB converts the object param as plain parameter list.</p>
+<figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dateToString(<span class="string">'%Y-%m-%d'</span>,<span class="string">"hire_date"</span>) <span class="keyword">as</span> hiredate</span><br></pre></td></tr></tbody></table></figure>
+<p>The first parameter is formatString, single quotes, the second parameter is “Date Field”,  double quotes.</p>
+<p>Please follow <a href="https://docs.mongodb.com/manual/reference/operator/aggregation-date/" target="_blank" rel="noopener">this link</a> to learn more about MongoDB date aggregation operators.</p>
+<h2><span id="quoting-names-and-string-values">Quoting Names and String Values</span></h2><p>In
+ NoSQLBooster, we follow ANSI SQL standard. Single quotes delimit a 
+string constant or a date/time constant. Double quotes delimit 
+identifiers e.g., collection names or column names. This is generally 
+only necessary when your identifier doesn’t fit the rules for simple 
+identifiers.</p>
+<p>The following SQL statement selects all the customers from the department “sales,” in the “employees” collection:</p>
+<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> employees <span class="keyword">WHERE</span> department=<span class="string">'sales'</span>;</span><br></pre></td></tr></tbody></table></figure>
+<p>The equivalent MongoDB query</p>
+<figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">db.employees.find({</span><br><span class="line">  <span class="string">"department"</span>: <span class="string">"sales"</span></span><br><span class="line">})</span><br></pre></td></tr></tbody></table></figure>
+<p>Single quotes are for strings. If you double quotes “sales,” 
+NoSQLBooster for MongoDB treat it as a column “sales,” not a string 
+‘sales’.</p>
+<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> employees <span class="keyword">WHERE</span> department=<span class="string">"sales"</span>;</span><br></pre></td></tr></tbody></table></figure>
+<p>The SQL generated the following MongoDB query that you may not want</p>
+<figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">db.employees.aggregate(</span><br><span class="line">  [{</span><br><span class="line">      <span class="string">"$addFields"</span>: {</span><br><span class="line">        <span class="string">"__tmp_cond_1"</span>: {</span><br><span class="line">          <span class="string">"$eq"</span>: [</span><br><span class="line">            <span class="string">"$department"</span>,</span><br><span class="line">            <span class="string">"$sales"</span></span><br><span class="line">          ]</span><br><span class="line">        }</span><br><span class="line">      }</span><br><span class="line">    },</span><br><span class="line">    {</span><br><span class="line">      <span class="string">"$match"</span>: {</span><br><span class="line">        <span class="string">"__tmp_cond_1"</span>: <span class="literal">true</span></span><br><span class="line">      }</span><br><span class="line">    },</span><br><span class="line">    {</span><br><span class="line">      <span class="string">"$project"</span>: {</span><br><span class="line">        <span class="string">"__tmp_cond_1"</span>: <span class="number">0</span></span><br><span class="line">      }</span><br><span class="line">    }</span><br><span class="line">  ])</span><br></pre></td></tr></tbody></table></figure>
+<p>Stick to using single quotes.</p>
+<h2><span id="explain-data-for-the-query">Explain Data for the Query</span></h2><p>Just
+ add a new line “.explain()” to the end of mb.runSQLQuery and click 
+execute button again. It returns the information on the processing of 
+the pipeline. </p>
+<p><a href="https://www.nosqlbooster.com/s3/img/sql-query-explain.png" title="alt text" class="fancybox" rel="article0"><img src="How%20to%20Query%20MongoDB%20with%20SQL%20SELECT%20|%20NoSQLBooster%20for%20MongoDB%20Blog_files/sql-query-explain.png" alt="alt text" title="Explain Data for the Query"></a><span class="caption">alt text</span></p>
+<h2><span id="querying-special-bson-data-types-uuid-bindata-dbref">Querying Special BSON Data Types, UUID, BinData, DBRef…</span></h2><p>To
+ query values of these particular BSON Data types, write the values as 
+you would in the MongoDB shell. All MongoDB build-in Data Types 
+functions are available.</p>
+<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--date</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> collection <span class="keyword">WHERE</span> date_field &gt;= <span class="built_in">date</span>(<span class="string">"2018-02-09T00:00:00+08:00"</span>)</span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> collection <span class="keyword">WHERE</span> date_field &gt;= ISODate(<span class="string">"2018-02-09"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">--number</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> collection <span class="keyword">WHERE</span> int64_field &gt;= NumberLong(<span class="string">"3223123123122132992"</span>) </span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> collection <span class="keyword">WHERE</span> decimal_field = NumberDecimal(<span class="string">"8989922322323232.12"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">--Regular Expression</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> collection <span class="keyword">WHERE</span> string_field = RegExp(<span class="string">'query'</span>,<span class="string">'i'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">--binary</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> collection <span class="keyword">WHERE</span> objectId_field = ObjectId(<span class="string">"56034dae9b835b3ee6a52cb7"</span>)</span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> collection <span class="keyword">WHERE</span> binary_field = BinData(<span class="number">0</span>,<span class="string">"X96v3g=="</span>)</span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> collection <span class="keyword">WHERE</span> md5_field = <span class="keyword">MD5</span>(<span class="string">"f65485ac0686409aabfa006f0c771fbb"</span>)</span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> collection <span class="keyword">WHERE</span> hex_field = HexData(<span class="number">0</span>,<span class="string">"00112233445566778899aabbccddeeff"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">--uuid</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> collection <span class="keyword">WHERE</span> uuid_field = <span class="keyword">UUID</span>(<span class="string">"4ae5bfce-1dba-4776-80eb-17678822b94e"</span>)</span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> collection <span class="keyword">WHERE</span> luuid_field = LUUID(<span class="string">"8c425c91-6a72-c25c-1c9d-3cfe237e7c92"</span>)</span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> collection <span class="keyword">WHERE</span> luuid_field = JSUUID(<span class="string">"8c425c91-6a72-c25c-1c9d-3cfe237e7c92"</span>)</span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> collection <span class="keyword">WHERE</span> luuid_field = CSUUID(<span class="string">"6a72c25c-5c91-8c42-927c-7e23fe3c9d1c"</span>)</span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> collection <span class="keyword">WHERE</span> luuid_field = PYUUID(<span class="string">"5cc2726a-915c-428c-927c-7e23fe3c9d1c"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">--timstamp</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> collection <span class="keyword">WHERE</span> timestamp_field = <span class="keyword">Timestamp</span>(<span class="number">1443057070</span>, <span class="number">1</span>)</span><br><span class="line"><span class="comment">--symbol</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> collection <span class="keyword">WHERE</span> symbol_field = Symbol(<span class="string">'I am a symbol'</span>)</span><br><span class="line"><span class="comment">--dbref</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> collection <span class="keyword">WHERE</span> dbref_field = DBRef(<span class="string">"unicorns"</span>, ObjectId(<span class="string">"55f23233edad44cb25b0d51a"</span>))</span><br><span class="line"><span class="comment">--minkey maxkey</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> collection <span class="keyword">WHERE</span> minkey_field = MinKey <span class="keyword">and</span> maxkey_field = MaxKey</span><br><span class="line"></span><br><span class="line"><span class="comment">--array, array_field is [1, 2, '3']</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> collection <span class="keyword">WHERE</span> array_field = [<span class="number">1</span>,<span class="number">2</span>,<span class="string">'3'</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">--object, object_field is { a : 1, b : {b1 : 2,    b2 : "b2"}</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> collection <span class="keyword">WHERE</span> object_field = toJS(a=<span class="number">1</span>, b=toJS(b1=<span class="number">2</span>, b2=<span class="string">'b2'</span>))</span><br></pre></td></tr></tbody></table></figure>
+<h2><span id="accessing-arrays-and-embedded-documents">Accessing Arrays and Embedded Documents</span></h2><p>Nested
+ documents (sub-documents) and arrays including filters and expressions 
+are supported. You can access such fields using a dotted name.</p>
+<p>Given the following documents in the survey collection:</p>
+<figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">db.survey.insert([   </span><br><span class="line">  { <span class="attr">_id</span>: <span class="number">1</span>, <span class="attr">results</span>: [ { <span class="attr">product</span>: <span class="string">"abc"</span>, <span class="attr">score</span>: <span class="number">10</span> }, { <span class="attr">product</span>: <span class="string">"xyz"</span>, <span class="attr">score</span>: <span class="number">5</span> } ]},</span><br><span class="line">  { <span class="attr">_id</span>: <span class="number">2</span>, <span class="attr">results</span>: [ { <span class="attr">product</span>: <span class="string">"abc"</span>, <span class="attr">score</span>: <span class="number">8</span> }, { <span class="attr">product</span>: <span class="string">"xyz"</span>, <span class="attr">score</span>: <span class="number">7</span> } ]},</span><br><span class="line">  { <span class="attr">_id</span>: <span class="number">3</span>, <span class="attr">results</span>: [ { <span class="attr">product</span>: <span class="string">"abc"</span>, <span class="attr">score</span>: <span class="number">7</span> }, { <span class="attr">product</span>: <span class="string">"xyz"</span>, <span class="attr">score</span>: <span class="number">8</span> } ]}</span><br><span class="line">])</span><br></pre></td></tr></tbody></table></figure>
+<p>The “product” and “score” would be referenced as results.product and results.score respectively:</p>
+<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> survey  <span class="keyword">WHERE</span> results.product = <span class="string">'xyz'</span> <span class="keyword">AND</span> results.score &gt;= <span class="number">8</span>;</span><br></pre></td></tr></tbody></table></figure>
+<p>or</p>
+<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> survey  <span class="keyword">WHERE</span> <span class="string">"results.product"</span> = <span class="string">'xyz'</span> <span class="keyword">AND</span> <span class="string">"results.score"</span> &gt;= <span class="number">8</span>;</span><br></pre></td></tr></tbody></table></figure>
+<p><strong><em>Element Match with Embedded Documents</em></strong></p>
+<p><i class="fa fa-lightbulb"></i> The elemMatch query criteria <strong><em>(score &gt;=8)</em></strong> will be translated as <strong><em>“score”: { “$gte”: 8 }</em></strong>. This syntax is more concise and expressive.</p>
+<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--  Enter "elemMatch [Tab]", to trigger auto-complete</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> survey <span class="keyword">WHERE</span> <span class="string">"results"</span> =elemMatch(product=<span class="string">'xyz'</span>, score &gt;=<span class="number">8</span>)</span><br></pre></td></tr></tbody></table></figure>
+<h2><span id="sql-equi-join">SQL Equi JOIN</span></h2><p>NoSQLBooster 
+supports SQL Equi JOIN which performs a JOIN against equality or 
+matching column(s) values of the associated tables.<br>An equal sign (=) is used as comparison operator in the where clause to refer equality.</p>
+<p>NoSQLBooster supports INNER JOIN and LEFT JOIN, OUTER JOIN is not supported.</p>
+<ol>
+<li>(INNER) JOIN: Returns records that have matching values in both tables</li>
+<li>LEFT JOIN: Return all records from the left table, and the matched records from the right table</li>
+</ol>
+<p>Equi JOIN will be translated as MongoDB $lookup stage. (MongoDB 3.2+) refer to: <a href="https://docs.mongodb.com/manual/reference/operator/aggregation/lookup" target="_blank" rel="noopener">https://docs.mongodb.com/manual/reference/operator/aggregation/lookup</a></p>
+<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> orders <span class="keyword">JOIN</span> inventory <span class="keyword">ON</span> orders.item=inventory.sku</span><br></pre></td></tr></tbody></table></figure>
+<h2><span id="the-tojs-sql-function-and-named-parameter">The “toJS” SQL Function and named parameter</span></h2><p>The
+ “toJS” helper function transforms the named parameters and arithmetic 
+operator into a JSON object, also transforms an ordinary parameter list 
+into an array.</p>
+<figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">toJS(k=<span class="string">'v'</span>); <span class="comment">//result {k:'v'}</span></span><br><span class="line">toJS(k=<span class="string">"v"</span>); <span class="comment">//result {k:'$v'}, Double quotes quote object names</span></span><br><span class="line">toJS(k=v); <span class="comment">//result {k:'$v'}, without quote, v is a object name</span></span><br><span class="line">toJS(k&gt;<span class="number">5</span>, k&lt;=<span class="number">10</span>); <span class="comment">//result  { "k": { "$gt": 5, "$lte": 10} }</span></span><br><span class="line">toJS(a=<span class="number">1</span>, b=toJS(b1=<span class="number">2</span>, b2=<span class="string">'b2'</span>)); <span class="comment">//result {a : 1, b : {b1 : 2,    b2 : "b2"}</span></span><br><span class="line">toJS(<span class="number">1</span>, <span class="number">2</span>,<span class="string">'3'</span>); <span class="comment">// result  [1,2,'3'];</span></span><br></pre></td></tr></tbody></table></figure>
+<p>With named parameter and “toJS” helper function, you can query complex objects or pass JSON-object parameter to a SQL function.</p>
+<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--elemMatch, named parameter and Arithmetic operators</span></span><br><span class="line"><span class="comment">--cool stuff,  (score&gt;8, score&lt;=10) will be translated as  {"score": { "$gt": 8, "$lte": 10 }}</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> survey <span class="keyword">WHERE</span> results =elemMatch(item=<span class="string">'abc'</span>, score&gt;<span class="number">8</span>, score&lt;=<span class="number">10</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">--date timezone, named parameter</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">year</span>(<span class="built_in">date</span>=<span class="string">"date"</span>, timezone=<span class="string">'America/Chicago'</span>) <span class="keyword">as</span> <span class="keyword">year</span> <span class="keyword">FROM</span> sales</span><br><span class="line"></span><br><span class="line"><span class="comment">--query object type value, object_field: { a : 1, b : {b1 : 2,    b2 : "b2"}</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> collection <span class="keyword">WHERE</span> object_field = toJS(a=<span class="number">1</span>, b=toJS(b1=<span class="number">2</span>, b2=<span class="string">'b2'</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment">-- text search with full-text search options</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> article <span class="keyword">WHERE</span> </span><br><span class="line">   $<span class="built_in">text</span> = toJS($<span class="keyword">search</span>=<span class="string">'cake'</span>,  $<span class="keyword">language</span>=<span class="string">'en'</span>, $caseSensitive=<span class="literal">false</span>, $diacriticSensitive=<span class="literal">false</span>) </span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> literal(toJS(k&gt;<span class="number">5</span>, k&lt;=<span class="number">10</span>))  <span class="keyword">FROM</span> collection</span><br></pre></td></tr></tbody></table></figure>
+<h2><span id="mixed-use-of-sql-and-chainable-aggregation-pipeline">Mixed use of SQL and Chainable Aggregation Pipeline</span></h2><p>NoSQLBooster for MongoDB translates SQL to MongoDB find/aggregate method which returns a AggregateCursor. All MongoDB <a href="https://docs.mongodb.com/manual/reference/method/js-cursor/" target="_blank" rel="noopener">cursor methods</a> and NoSQLBooster for MongoDB’s <a href="https://mongobooster.com/FluentQueryAPI#CursorExtensionMethods">extension methods</a>
+ can be called. This also allows NoSQLBooster Intellisense to know all 
+AggregateCursor’s chainable stage methods. (sort, limit, match, project,
+ unwind…)</p>
+<figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">mb.runSQLQuery(<span class="string">`</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">       SELECT * FROM "survey" where type='ABC' and year(date) = 2018 ORDER BY "results.score" DESC</span></span><br><span class="line"><span class="string">       </span></span><br><span class="line"><span class="string">`</span>)</span><br><span class="line">.unwind(<span class="string">'$tags'</span>)</span><br><span class="line">.project(<span class="string">"-_id"</span>) <span class="comment">//alias select</span></span><br><span class="line">.limit(<span class="number">1000</span>)</span><br></pre></td></tr></tbody></table></figure>
+<p>The equivalent MongoDB Query is a bit longer.</p>
+<figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">db.survey.aggregate(</span><br><span class="line">[</span><br><span class="line">    {</span><br><span class="line">        <span class="string">"$addFields"</span> : {</span><br><span class="line">            <span class="string">"year(date)"</span> : {</span><br><span class="line">                <span class="string">"$year"</span> : <span class="string">"$date"</span></span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">    },</span><br><span class="line">    {</span><br><span class="line">        <span class="string">"$match"</span> : {</span><br><span class="line">            <span class="string">"type"</span> : <span class="string">"ABC"</span>,</span><br><span class="line">            <span class="string">"year(date)"</span> : <span class="number">2018</span></span><br><span class="line">        }</span><br><span class="line">    },</span><br><span class="line">    {</span><br><span class="line">        <span class="string">"$project"</span> : {</span><br><span class="line">            <span class="string">"year(date)"</span> : <span class="number">0</span></span><br><span class="line">        }</span><br><span class="line">    },</span><br><span class="line">    {</span><br><span class="line">        <span class="string">"$sort"</span> : {</span><br><span class="line">            <span class="string">"results.score"</span> : <span class="number">-1</span></span><br><span class="line">        }</span><br><span class="line">    },</span><br><span class="line">    {</span><br><span class="line">        <span class="string">"$unwind"</span> : <span class="string">"$tags"</span></span><br><span class="line">    },</span><br><span class="line">    {</span><br><span class="line">        <span class="string">"$project"</span> : {</span><br><span class="line">            <span class="string">"_id"</span> : <span class="number">0</span></span><br><span class="line">        }</span><br><span class="line">    },</span><br><span class="line">    {</span><br><span class="line">        <span class="string">"$limit"</span> : <span class="number">1000</span></span><br><span class="line">    }</span><br><span class="line">])</span><br></pre></td></tr></tbody></table></figure>
+<h2><span id="save-sql-query-as-mongodb-read-only-view">Save SQL Query as MongoDB Read-only View</span></h2><p>You can use the extension method “saveAsView” to save SQL Query result as a MongoDB read-only view.</p>
+<figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//double quotes quote object names (e.g. "collection"). Single quotes are for strings 'string'.</span></span><br><span class="line">mb.runSQLQuery(<span class="string">"</span></span><br><span class="line"><span class="string">      SELECT  concat(first_name, ' ', last_name) as fullname,</span></span><br><span class="line"><span class="string">            dateToString('%Y-%m-%d',hire_date) as hiredate </span></span><br><span class="line"><span class="string">      FROM employees </span></span><br><span class="line"><span class="string">      WHERE hire_date &gt;= date('2017-01-01') </span></span><br><span class="line"><span class="string">       </span></span><br><span class="line"><span class="string">"</span>).saveAsView(<span class="string">"Employers_hired_after_2017"</span>, {<span class="attr">dropIfExists</span>:<span class="literal">true</span>}) <span class="comment">//drop view if it exists.</span></span><br></pre></td></tr></tbody></table></figure>
+<p>You can also use the forEach method to apply a javascript method to each document.</p>
+<figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mb.runSQLQuery(<span class="string">"SELECT * FROM employees WHERE hire_date &gt;= date('2017-01-01')"</span>)</span><br><span class="line">  .forEach(<span class="function"><span class="params">it</span>=&gt;</span>{</span><br><span class="line">    <span class="comment">//sendToMail(it)</span></span><br><span class="line">  });</span><br></pre></td></tr></tbody></table></figure>
+<h2><span id="sql-snippets">SQL Snippets</span></h2><p>NoSQLBooster 
+includes a lot of SQL-specific code snippets to save you time, Date 
+Range, Text Search, Query and Array, Existence Check, Type Check and so 
+on. You can always manually trigger it with “Ctrl-Shift-Space”}}}. Out 
+of the box, “Ctrl-Space”}}}, “Alt-Space”}}} are acceptable triggers.</p>
+<p><a href="https://www.nosqlbooster.com/s3/img/sql-snippet-daterange.gif" title="SQL Snippet" class="fancybox" rel="article0"><img src="How%20to%20Query%20MongoDB%20with%20SQL%20SELECT%20|%20NoSQLBooster%20for%20MongoDB%20Blog_files/sql-snippet-daterange.gif" alt="SQL Snippet"></a><span class="caption">SQL Snippet</span></p>
+<h3><span id="sql-date-range-snippets">SQL Date Range Snippets</span></h3><figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--  Enter "daterange [Tab]," then..., today, yesterday, lastNDays</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> collection <span class="keyword">WHERE</span></span><br><span class="line">  <span class="string">"|"</span> &gt;= <span class="built_in">date</span>(<span class="string">"2018-02-09T00:00:00+08:00"</span>) <span class="keyword">and</span> <span class="string">"|"</span> &lt; <span class="built_in">date</span>(<span class="string">"2018-02-10T00:00:00+08:00"</span>)</span><br></pre></td></tr></tbody></table></figure>
+<h3><span id="text-search-snippets">Text Search Snippets</span></h3><figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">--  Enter "text [Tab]", then...</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> collection <span class="keyword">WHERE</span> $<span class="built_in">text</span> = toJS($<span class="keyword">search</span>=<span class="string">'|'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">--  Enter "textopt [Tab]", then...</span></span><br><span class="line"><span class="comment">--  with full-text search options</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> collection <span class="keyword">WHERE</span> </span><br><span class="line">   $<span class="built_in">text</span> = toJS($<span class="keyword">search</span>=<span class="string">'|'</span>,  $<span class="keyword">language</span>=<span class="string">'en'</span>, $caseSensitive=<span class="literal">false</span>, $diacriticSensitive=<span class="literal">false</span>)</span><br></pre></td></tr></tbody></table></figure>
+<p>The equivalent MongoDB Text Search</p>
+<figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">db.collection.find({</span><br><span class="line">  <span class="string">"$text"</span>: {</span><br><span class="line">    <span class="string">"$search"</span>: <span class="string">"|"</span>,</span><br><span class="line">    <span class="string">"$language"</span>: <span class="string">"en"</span>,</span><br><span class="line">    <span class="string">"$caseSensitive"</span>: <span class="literal">false</span>,</span><br><span class="line">    <span class="string">"$diacriticSensitive"</span>: <span class="literal">false</span></span><br><span class="line">  }</span><br><span class="line">})</span><br></pre></td></tr></tbody></table></figure>
+<h3><span id="query-an-array-all-and-elemmatch-snippets">Query an Array ($all and $elemMatch) Snippets</span></h3><p>The
+ $elemMatch operator matches documents that contain an array field with 
+at least one element that matches all the specified query criteria.</p>
+<ul>
+<li>Element Match with Embedded Documents </li>
+</ul>
+<p><i class="fa fa-lightbulb"></i> The elemMatch query criteria <strong><em>(quantity&gt;2, quantity&lt;=10)</em></strong> will be translated as <strong><em> “quantity”: { “$gt”: 2, “$lte”: 10 }</em></strong>. This syntax is more concise and expressive.</p>
+<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--  Enter "elemem [Tab]", then...</span></span><br><span class="line"><span class="comment">--  </span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> survey <span class="keyword">WHERE</span> <span class="string">"|"</span> =elemMatch(product=<span class="string">'abc'</span>, quantity&gt;<span class="number">2</span>, quantity&lt;=<span class="number">10</span>)</span><br></pre></td></tr></tbody></table></figure>
+<p>The equivalent MongoDB Query</p>
+<figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">db.survey.find({</span><br><span class="line">  <span class="string">"|"</span>: {</span><br><span class="line">    <span class="string">"$elemMatch"</span>: {</span><br><span class="line">      <span class="string">"product"</span>: <span class="string">"abc"</span>,</span><br><span class="line">      <span class="string">"quantity"</span>: {</span><br><span class="line">        <span class="string">"$gt"</span>: <span class="number">2</span>,</span><br><span class="line">        <span class="string">"$lte"</span>: <span class="number">10</span></span><br><span class="line">      }</span><br><span class="line">    }</span><br><span class="line">  }</span><br><span class="line">})</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>Element Match</li>
+</ul>
+<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--  Enter "elem [Tab]", then...</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> survey <span class="keyword">WHERE</span> <span class="string">"score"</span> =elemMatch($gte=<span class="number">80</span>, $lte=<span class="number">85</span>)</span><br></pre></td></tr></tbody></table></figure>
+<p>The equivalent MongoDB Query</p>
+<figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">db.survey.find({</span><br><span class="line">  <span class="string">"score"</span>: {</span><br><span class="line">    <span class="string">"$elemMatch"</span>: {</span><br><span class="line">      <span class="string">"$gte"</span>: <span class="number">80</span>,</span><br><span class="line">      <span class="string">"$lte"</span>: <span class="number">85</span></span><br><span class="line">    }</span><br><span class="line">  }</span><br><span class="line">})</span><br></pre></td></tr></tbody></table></figure>
+<p>The $all array operator selects the documents where the value of a field is an array that contains all the specified elements.</p>
+<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--  Enter "all [Tab]", then...</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> survey <span class="keyword">WHERE</span> <span class="string">"|"</span> = toJS($all=[<span class="string">''</span>, <span class="string">''</span>])</span><br></pre></td></tr></tbody></table></figure>
+<h3><span id="existence-check-and-type-check-snippets">Existence Check and Type Check Snippets</span></h3><ul>
+<li>Existence Check ($exists)</li>
+</ul>
+<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--  Enter "exists [Tab]", then...</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> collection <span class="keyword">WHERE</span> <span class="string">"|"</span> =$<span class="keyword">exists</span>(<span class="literal">TRUE</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">--  Enter "nonExist [Tab]", then...</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> collection <span class="keyword">WHERE</span> <span class="string">"|"</span> = $<span class="keyword">exists</span>(<span class="literal">FALSE</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">--  Enter "existAndIsNull [Tab]", then...</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> collection <span class="keyword">WHERE</span> <span class="string">"|"</span> = $<span class="keyword">exists</span>(<span class="literal">TRUE</span>) <span class="keyword">and</span> <span class="string">"|"</span> <span class="keyword">IS</span> <span class="literal">NULL</span></span><br><span class="line"></span><br><span class="line"><span class="comment">--  Enter "existAndIsNotNull [Tab]", then...</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> collection <span class="keyword">WHERE</span> <span class="string">"|"</span> = $<span class="keyword">exists</span>(<span class="literal">TRUE</span>) <span class="keyword">and</span> <span class="string">"|"</span> <span class="keyword">IS</span> <span class="keyword">NOT</span> <span class="literal">NULL</span></span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>Querying by Multiple Data Type ($type)</li>
+</ul>
+<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--  Enter "typeSearch [Tab]", then...</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> collection <span class="keyword">WHERE</span> <span class="string">"|"</span> = toJS($<span class="keyword">type</span>=[<span class="string">'double'</span>,<span class="string">'int'</span>,<span class="string">'string'</span>,<span class="string">'bool'</span>,<span class="string">'date'</span>,<span class="string">'object'</span>,<span class="string">'array'</span>,<span class="string">'null'</span>])</span><br></pre></td></tr></tbody></table></figure>
+<hr>
+<h2><span id="complete-list-of-sql-support">Complete List of SQL Support</span></h2><p>To check out the complete list of SQL Support, visit <a href="https://mongobooster.com/blog/query-mongodb-with-sql/featuresForSQL">this link</a>.</p>
+
+        <h2 id="Thank-you"><a href="#Thank-you" class="headerlink" title="Thank you!"></a>Thank you!</h2><p>  Please visit our <a href="https://mongobooster.useresponse.com/">feedback page</a>
+ or click the “Feedback” button in the app. Feel free to suggest 
+improvements to our product or service. Users can discuss your 
+suggestion and vote for and against it. We’ll look at it too.</p>
+
+      
+
+    <footer class="article-footer">
+      <a data-url="https://www.nosqlbooster.com/blog/query-mongodb-with-sql/" data-id="cjno0a1ct00002stu8efibc4p" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="https://mongobooster.com/blog/tags/SQL-Query/">SQL Query</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="https://mongobooster.com/blog/announcing-mongobooster-41/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          MongoBooster 4.1 Released! Visual Query Builder and Scripts History Search
+        
+      </div>
+    </a>
+  
+  
+    <a href="https://mongobooster.com/blog/announcing-mongobooster-40/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">MongoBooster 4.0 Released! Query MongoDB with SQL</div>
+    </a>
+  
+</nav>
+
+  
+</div></article>
+
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="https://mongobooster.com/blog/tags/Aggregation/">Aggregation</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://mongobooster.com/blog/tags/Azure/">Azure</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://mongobooster.com/blog/tags/Change-Stream/">Change Stream</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://mongobooster.com/blog/tags/Collection/">Collection</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://mongobooster.com/blog/tags/Connection/">Connection</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://mongobooster.com/blog/tags/Data-Generator/">Data Generator</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://mongobooster.com/blog/tags/Editor/">Editor</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://mongobooster.com/blog/tags/Favorite-Scripts/">Favorite Scripts</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://mongobooster.com/blog/tags/Find/">Find</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://mongobooster.com/blog/tags/Fluent-API/">Fluent API</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://mongobooster.com/blog/tags/History-Scripts/">History Scripts</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://mongobooster.com/blog/tags/Import-Export/">Import/Export</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://mongobooster.com/blog/tags/Indexes/">Indexes</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://mongobooster.com/blog/tags/Intellisense/">Intellisense</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://mongobooster.com/blog/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://mongobooster.com/blog/tags/Log/">Log</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://mongobooster.com/blog/tags/Mongo-Shell/">Mongo Shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://mongobooster.com/blog/tags/Mongo-Utilities/">Mongo Utilities</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://mongobooster.com/blog/tags/MongoDB-Enterprise/">MongoDB Enterprise</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://mongobooster.com/blog/tags/MongoDB-Shell/">MongoDB Shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://mongobooster.com/blog/tags/MongoDB3-4/">MongoDB3.4</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://mongobooster.com/blog/tags/MongoDB3-6/">MongoDB3.6</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://mongobooster.com/blog/tags/MongoDB4-0/">MongoDB4.0</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://mongobooster.com/blog/tags/Query-Builder/">Query Builder</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://mongobooster.com/blog/tags/Query-Code-Generator/">Query Code Generator</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://mongobooster.com/blog/tags/Query-Operator/">Query Operator</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://mongobooster.com/blog/tags/Query-Plan/">Query Plan</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://mongobooster.com/blog/tags/Releases/">Releases</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://mongobooster.com/blog/tags/SQL/">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://mongobooster.com/blog/tags/SQL-Query/">SQL Query</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://mongobooster.com/blog/tags/Schema-Analyzer/">Schema Analyzer</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://mongobooster.com/blog/tags/Scripts-History/">Scripts History</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://mongobooster.com/blog/tags/Shell-Extensions/">Shell Extensions</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://mongobooster.com/blog/tags/Theme/">Theme</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://mongobooster.com/blog/tags/Transaction/">Transaction</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://mongobooster.com/blog/tags/View/">View</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://mongobooster.com/blog/tags/Views/">Views</a></li><li class="tag-list-item"><a class="tag-list-link" href="https://mongobooster.com/blog/tags/esnext/">esnext</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="https://mongobooster.com/blog/tags/Aggregation/" style="font-size: 16px;">Aggregation</a> <a href="https://mongobooster.com/blog/tags/Azure/" style="font-size: 10px;">Azure</a> <a href="https://mongobooster.com/blog/tags/Change-Stream/" style="font-size: 12px;">Change Stream</a> <a href="https://mongobooster.com/blog/tags/Collection/" style="font-size: 10px;">Collection</a> <a href="https://mongobooster.com/blog/tags/Connection/" style="font-size: 10px;">Connection</a> <a href="https://mongobooster.com/blog/tags/Data-Generator/" style="font-size: 10px;">Data Generator</a> <a href="https://mongobooster.com/blog/tags/Editor/" style="font-size: 12px;">Editor</a> <a href="https://mongobooster.com/blog/tags/Favorite-Scripts/" style="font-size: 10px;">Favorite Scripts</a> <a href="https://mongobooster.com/blog/tags/Find/" style="font-size: 12px;">Find</a> <a href="https://mongobooster.com/blog/tags/Fluent-API/" style="font-size: 10px;">Fluent API</a> <a href="https://mongobooster.com/blog/tags/History-Scripts/" style="font-size: 10px;">History Scripts</a> <a href="https://mongobooster.com/blog/tags/Import-Export/" style="font-size: 16px;">Import/Export</a> <a href="https://mongobooster.com/blog/tags/Indexes/" style="font-size: 12px;">Indexes</a> <a href="https://mongobooster.com/blog/tags/Intellisense/" style="font-size: 10px;">Intellisense</a> <a href="https://mongobooster.com/blog/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="https://mongobooster.com/blog/tags/Log/" style="font-size: 12px;">Log</a> <a href="https://mongobooster.com/blog/tags/Mongo-Shell/" style="font-size: 10px;">Mongo Shell</a> <a href="https://mongobooster.com/blog/tags/Mongo-Utilities/" style="font-size: 12px;">Mongo Utilities</a> <a href="https://mongobooster.com/blog/tags/MongoDB-Enterprise/" style="font-size: 10px;">MongoDB Enterprise</a> <a href="https://mongobooster.com/blog/tags/MongoDB-Shell/" style="font-size: 10px;">MongoDB Shell</a> <a href="https://mongobooster.com/blog/tags/MongoDB3-4/" style="font-size: 10px;">MongoDB3.4</a> <a href="https://mongobooster.com/blog/tags/MongoDB3-6/" style="font-size: 12px;">MongoDB3.6</a> <a href="https://mongobooster.com/blog/tags/MongoDB4-0/" style="font-size: 18px;">MongoDB4.0</a> <a href="https://mongobooster.com/blog/tags/Query-Builder/" style="font-size: 14px;">Query Builder</a> <a href="https://mongobooster.com/blog/tags/Query-Code-Generator/" style="font-size: 12px;">Query Code Generator</a> <a href="https://mongobooster.com/blog/tags/Query-Operator/" style="font-size: 10px;">Query Operator</a> <a href="https://mongobooster.com/blog/tags/Query-Plan/" style="font-size: 10px;">Query Plan</a> <a href="https://mongobooster.com/blog/tags/Releases/" style="font-size: 20px;">Releases</a> <a href="https://mongobooster.com/blog/tags/SQL/" style="font-size: 12px;">SQL</a> <a href="https://mongobooster.com/blog/tags/SQL-Query/" style="font-size: 14px;">SQL Query</a> <a href="https://mongobooster.com/blog/tags/Schema-Analyzer/" style="font-size: 10px;">Schema Analyzer</a> <a href="https://mongobooster.com/blog/tags/Scripts-History/" style="font-size: 10px;">Scripts History</a> <a href="https://mongobooster.com/blog/tags/Shell-Extensions/" style="font-size: 14px;">Shell Extensions</a> <a href="https://mongobooster.com/blog/tags/Theme/" style="font-size: 10px;">Theme</a> <a href="https://mongobooster.com/blog/tags/Transaction/" style="font-size: 12px;">Transaction</a> <a href="https://mongobooster.com/blog/tags/View/" style="font-size: 10px;">View</a> <a href="https://mongobooster.com/blog/tags/Views/" style="font-size: 10px;">Views</a> <a href="https://mongobooster.com/blog/tags/esnext/" style="font-size: 14px;">esnext</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="https://mongobooster.com/blog/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="https://mongobooster.com/blog/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="https://mongobooster.com/blog/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="https://mongobooster.com/blog/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="https://mongobooster.com/blog/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="https://mongobooster.com/blog/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="https://mongobooster.com/blog/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="https://mongobooster.com/blog/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="https://mongobooster.com/blog/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="https://mongobooster.com/blog/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="https://mongobooster.com/blog/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="https://mongobooster.com/blog/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="https://mongobooster.com/blog/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="https://mongobooster.com/blog/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="https://mongobooster.com/blog/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="https://mongobooster.com/blog/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="https://mongobooster.com/blog/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="https://mongobooster.com/blog/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="https://mongobooster.com/blog/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="https://mongobooster.com/blog/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="https://mongobooster.com/blog/archives/2016/03/">March 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="https://mongobooster.com/blog/archives/2016/02/">February 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="https://mongobooster.com/blog/archives/2016/01/">January 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="https://mongobooster.com/blog/announcing-nosqlbooster-50/">NoSQLBooster 5.0 Is Now Available!</a>
+          </li>
+        
+          <li>
+            <a href="https://mongobooster.com/blog/announcing-nosqlbooster-50-rc/">Announcing NoSQLBooster 5.0 RC!</a>
+          </li>
+        
+          <li>
+            <a href="https://mongobooster.com/blog/announcing-mongobooster-47-2/">NoSQLBooster for MongoDB 4.7.2 Released! Open Script Editor Faster</a>
+          </li>
+        
+          <li>
+            <a href="https://mongobooster.com/blog/announcing-mongobooster-47/">Announcing NoSQLBooster 4.7!</a>
+          </li>
+        
+          <li>
+            <a href="https://mongobooster.com/blog/announcing-mongobooster-46/">NoSQLBooster for MongoDB 4.6 Released! official support for MongoDB 4.0</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      © 2018 QingHai<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="https://www.nosqlbooster.com/" class="mobile-nav-link">Home</a>
+  
+    <a href="https://mongobooster.com/blog/archives/" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="How%20to%20Query%20MongoDB%20with%20SQL%20SELECT%20|%20NoSQLBooster%20for%20MongoDB%20Blog_files/jquery_002.js"></script>
+
+
+  <link rel="stylesheet" href="How%20to%20Query%20MongoDB%20with%20SQL%20SELECT%20|%20NoSQLBooster%20for%20MongoDB%20Blog_files/jquery.css">
+  <script src="How%20to%20Query%20MongoDB%20with%20SQL%20SELECT%20|%20NoSQLBooster%20for%20MongoDB%20Blog_files/jquery.js"></script>
+
+
+<script src="How%20to%20Query%20MongoDB%20with%20SQL%20SELECT%20|%20NoSQLBooster%20for%20MongoDB%20Blog_files/script.js"></script>
+
+  </div>
+
+</body></html>

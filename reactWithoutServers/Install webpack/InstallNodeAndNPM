@@ -1,0 +1,17 @@
+curl -sL https://deb.nodesource.com/setup_8.x | sudo bash -
+sudo apt install nodejs
+
+#last npm
+$ curl -L https://www.npmjs.com/install.sh | sh
+
+
+sudo npm install --save-dev webpack
+
+#install the loader
+sudo npm i @babel/core babel-loader @babel/preset-env @babel/preset-react --save-dev
+
+#prepare react
+sudo npm i react react-dom --save-dev
+
+#
+sudo npm i prop-types --save-dev

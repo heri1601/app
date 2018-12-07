@@ -1,0 +1,1 @@
+{"errors":[{"status":400,"title":"Bad Request","detail":"Invalid version scheme - must be 'semver'"}]}

@@ -1,0 +1,1025 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html class="no-js isDesktop wf-loadingwf-loading gr__credera_com wf-proximanova-n9-active wf-proximanova-n7-active wf-proximanova-n8-active wf-adelle-n4-active wf-proximanova-n6-inactive wf-proximanova-n4-inactive wf-proximanova-i5-inactive wf-active wf-adelle-i4-inactive wf-adelle-n6-inactive wf-myriadpro-n7-inactive wf-myriadpro-n4-inactive wf-lato-n7-inactive wf-lato-n3-inactive wf-azosansweb-n3-inactive wf-azosansweb-n5-inactive wf-azosansweb-n4-inactive"><!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]--><!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]--><!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]--><!--[if gt IE 8]><!--><!--<![endif]--><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Language" content="en">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="https://www.credera.com/wp-content/themes/credera2015/favicon.ico">
+<!-- This site is optimized with the Yoast SEO plugin v6.2 - https://yoa.st/1yg?utm_content=6.2 -->
+<title>MongoDB Explained in 5 Minutes or Less - Credera</title>
+<meta name="description" content="MongoDB is a document-oriented database and is currently the most popular NoSQL database on the market. Let’s take a quick look at MongoDB, its main features, and how it’s being used.">
+<link rel="canonical" href="https://www.credera.com/blog/technology-insights/java/mongodb-explained-5-minutes-less/">
+<link rel="publisher" href="http://plus.google.com/104023835170199705713/about">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MongoDB Explained in 5 Minutes or Less - Credera">
+<meta property="og:description" content="MongoDB is a document-oriented database and is currently the most popular NoSQL database on the market. Let’s take a quick look at MongoDB, its main features, and how it’s being used.">
+<meta property="og:url" content="https://www.credera.com/blog/technology-insights/java/mongodb-explained-5-minutes-less/">
+<meta property="og:site_name" content="Credera">
+<meta property="article:publisher" content="http://www.facebook.com/Credera">
+<meta property="article:tag" content="NoSQL Database">
+<meta property="article:tag" content="MongoDB">
+<meta property="article:tag" content="Operational Intelligence">
+<meta property="article:tag" content="Dynamic Schemas">
+<meta property="article:tag" content="Forbes">
+<meta property="article:tag" content="MetLife">
+<meta property="article:tag" content="CERN">
+<meta property="article:tag" content="Under Armour">
+<meta property="article:tag" content="Rich Querying">
+<meta property="article:section" content="Java">
+<meta property="article:published_time" content="2014-01-30T06:03:37-06:00">
+<meta property="article:modified_time" content="2017-07-20T08:49:08-06:00">
+<meta property="og:updated_time" content="2017-07-20T08:49:08-06:00">
+<meta property="fb:admins" content="18810084">
+<meta property="fb:admins" content="1548960128">
+<meta property="og:image" content="https://www.credera.com/wp-content/uploads/2015/06/ext.jpeg">
+<meta property="og:image:secure_url" content="https://www.credera.com/wp-content/uploads/2015/06/ext.jpeg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="MongoDB is a document-oriented database and is currently the most popular NoSQL database on the market. Let’s take a quick look at MongoDB, its main features, and how it’s being used.">
+<meta name="twitter:title" content="MongoDB Explained in 5 Minutes or Less - Credera">
+<meta name="twitter:site" content="@credera">
+<meta name="twitter:image" content="https://www.credera.com/wp-content/uploads/2015/06/ext.jpeg">
+<meta name="twitter:creator" content="@credera">
+<script type="text/javascript" data-cfasync="false" charset="UTF-8" async="" defer="defer" src="MongoDB%20Explained%20in%205%20Minutes%20or%20Less%20-%20Credera_files/auryc.js"></script><script src="MongoDB%20Explained%20in%205%20Minutes%20or%20Less%20-%20Credera_files/mxm6idj.js" async=""></script><script src="MongoDB%20Explained%20in%205%20Minutes%20or%20Less%20-%20Credera_files/utag_002.js" type="text/javascript" async=""></script><script async="" src="MongoDB%20Explained%20in%205%20Minutes%20or%20Less%20-%20Credera_files/analytics.js"></script><script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"WebSite","@id":"#website","url":"https:\/\/www.credera.com\/","name":"Credera.com","alternateName":"credera","potentialAction":{"@type":"SearchAction","target":"https:\/\/www.credera.com\/?s={search_term_string}","query-input":"required name=search_term_string"}}</script>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"Organization","url":"https:\/\/www.credera.com\/blog\/technology-insights\/java\/mongodb-explained-5-minutes-less\/","sameAs":["http:\/\/www.facebook.com\/Credera","https:\/\/www.linkedin.com\/company\/credera","http:\/\/plus.google.com\/104023835170199705713\/about","https:\/\/twitter.com\/credera"],"@id":"#organization","name":"Credera","logo":"https:\/\/www.credera.com\/wp-content\/uploads\/2015\/06\/ext.jpeg"}</script>
+<!-- / Yoast SEO plugin. -->
+<link rel="dns-prefetch" href="https://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="Credera » MongoDB Explained in 5 Minutes or Less Comments Feed" href="https://www.credera.com/blog/technology-insights/java/mongodb-explained-5-minutes-less/feed/">
+<link rel="stylesheet" id="page-style-css" href="MongoDB%20Explained%20in%205%20Minutes%20or%20Less%20-%20Credera_files/A_005.css" type="text/css" media="all">
+<link rel="stylesheet" id="theme-style-css" href="MongoDB%20Explained%20in%205%20Minutes%20or%20Less%20-%20Credera_files/A.css" type="text/css" media="all">
+<link rel="stylesheet" id="ctt-css" href="MongoDB%20Explained%20in%205%20Minutes%20or%20Less%20-%20Credera_files/A_002.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-syntax-css-css" href="MongoDB%20Explained%20in%205%20Minutes%20or%20Less%20-%20Credera_files/A_003.css" type="text/css" media="all">
+<script type="text/javascript" src="MongoDB%20Explained%20in%205%20Minutes%20or%20Less%20-%20Credera_files/jquery.js"></script>
+<script type="text/javascript" src="MongoDB%20Explained%20in%205%20Minutes%20or%20Less%20-%20Credera_files/jquery-migrate.js"></script>
+<link rel="https://api.w.org/" href="https://www.credera.com/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.credera.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.credera.com/wp-includes/wlwmanifest.xml">
+<meta name="generator" content="WordPress 4.9.2">
+<link rel="shortlink" href="https://www.credera.com/?p=9869">
+<link rel="alternate" type="application/json+oembed" href="https://www.credera.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.credera.com%2Fblog%2Ftechnology-insights%2Fjava%2Fmongodb-explained-5-minutes-less%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://www.credera.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.credera.com%2Fblog%2Ftechnology-insights%2Fjava%2Fmongodb-explained-5-minutes-less%2F&amp;format=xml">
+<style type="text/css" media="screen">html{margin-top:0!important}* html body{margin-top:0!important}</style>	<style type="text/css" id="wp-custom-css"></style>
+<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+<!-- Google Analytics -->
+<script type="text/javascript">(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-4144578-2','auto');ga('require','displayfeatures');ga('send','pageview',{'dimension1':'Integration and Data Services','dimension2':'mwilson@credera.com','dimension3':'January 30, 2014','title':'MongoDB Explained in 5 Minutes or Less'});</script>
+<script src="MongoDB%20Explained%20in%205%20Minutes%20or%20Less%20-%20Credera_files/api.js"></script>
+<!-- End Google Analytics -->
+<!-- Begin AddThis -->
+<script type="text/javascript" src="MongoDB%20Explained%20in%205%20Minutes%20or%20Less%20-%20Credera_files/addthis_widget.js"></script>
+<!-- End AddThis -->
+<script src="MongoDB%20Explained%20in%205%20Minutes%20or%20Less%20-%20Credera_files/fvc1fqp.js"></script>
+<style type="text/css">.tk-proxima-nova{font-family:"proxima-nova",sans-serif;}</style><style type="text/css">@font-face{font-family:tk-proxima-nova-n9;src:url(https://use.typekit.net/af/55bd39/00000000000000003b9b093f/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n9&v=3) format("woff2"),url(https://use.typekit.net/af/55bd39/00000000000000003b9b093f/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n9&v=3) format("woff"),url(https://use.typekit.net/af/55bd39/00000000000000003b9b093f/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n9&v=3) format("opentype");font-weight:900;font-style:normal;}@font-face{font-family:tk-proxima-nova-n7;src:url(https://use.typekit.net/af/71f83c/00000000000000003b9b093b/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3) format("woff2"),url(https://use.typekit.net/af/71f83c/00000000000000003b9b093b/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3) format("woff"),url(https://use.typekit.net/af/71f83c/00000000000000003b9b093b/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3) format("opentype");font-weight:700;font-style:normal;}@font-face{font-family:tk-proxima-nova-n8;src:url(https://use.typekit.net/af/a3eee8/00000000000000003b9b093c/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n8&v=3) format("woff2"),url(https://use.typekit.net/af/a3eee8/00000000000000003b9b093c/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n8&v=3) format("woff"),url(https://use.typekit.net/af/a3eee8/00000000000000003b9b093c/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n8&v=3) format("opentype");font-weight:800;font-style:normal;}@font-face{font-family:tk-proxima-nova-n6;src:url(https://use.typekit.net/af/27776b/00000000000000003b9b0939/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n6&v=3) format("woff2"),url(https://use.typekit.net/af/27776b/00000000000000003b9b0939/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n6&v=3) format("woff"),url(https://use.typekit.net/af/27776b/00000000000000003b9b0939/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n6&v=3) format("opentype");font-weight:600;font-style:normal;}@font-face{font-family:tk-proxima-nova-n4;src:url(https://use.typekit.net/af/4838bd/00000000000000003b9b0934/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3) format("woff2"),url(https://use.typekit.net/af/4838bd/00000000000000003b9b0934/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3) format("woff"),url(https://use.typekit.net/af/4838bd/00000000000000003b9b0934/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3) format("opentype");font-weight:400;font-style:normal;}@font-face{font-family:tk-proxima-nova-i5;src:url(https://use.typekit.net/af/1cd3b2/00000000000000003b9b0937/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i5&v=3) format("woff2"),url(https://use.typekit.net/af/1cd3b2/00000000000000003b9b0937/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i5&v=3) format("woff"),url(https://use.typekit.net/af/1cd3b2/00000000000000003b9b0937/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i5&v=3) format("opentype");font-weight:500;font-style:italic;}</style><script>try{Typekit.load({async:true});}catch(e){}</script>
+<script src="MongoDB%20Explained%20in%205%20Minutes%20or%20Less%20-%20Credera_files/container.js" data-cfasync="false" async="true" defer="true" data-vendor="userty" data-role="container" charset="utf-8"></script><script async="" type="text/javascript" src="MongoDB%20Explained%20in%205%20Minutes%20or%20Less%20-%20Credera_files/visit"></script><script async="" type="text/javascript" src="MongoDB%20Explained%20in%205%20Minutes%20or%20Less%20-%20Credera_files/count_002.js"></script><link rel="prefetch" as="style" href="MongoDB%20Explained%20in%205%20Minutes%20or%20Less%20-%20Credera_files/a_data/lounge.css"><link rel="prefetch" as="script" href="MongoDB%20Explained%20in%205%20Minutes%20or%20Less%20-%20Credera_files/a_data/common.js"><link rel="prefetch" as="script" href="MongoDB%20Explained%20in%205%20Minutes%20or%20Less%20-%20Credera_files/a_data/lounge.js"><link rel="prefetch" as="script" href="MongoDB%20Explained%20in%205%20Minutes%20or%20Less%20-%20Credera_files/a_data/config.js"><style type="text/css">.tk-adelle{font-family:"adelle",serif;}.tk-myriad-pro{font-family:"myriad-pro",sans-serif;}.tk-lato{font-family:"lato",sans-serif;}.tk-azo-sans-web{font-family:"azo-sans-web",sans-serif;}</style><style type="text/css">@font-face{font-family:adelle;src:url(https://use.typekit.net/af/73d497/000000000000000000012b3d/27/l?primer=b997bcdf54b83a9f7b731c29130c4fbe326c83acb7cf220896c6041d3c02ba6a&fvd=n4&v=3) format("woff2"),url(https://use.typekit.net/af/73d497/000000000000000000012b3d/27/d?primer=b997bcdf54b83a9f7b731c29130c4fbe326c83acb7cf220896c6041d3c02ba6a&fvd=n4&v=3) format("woff"),url(https://use.typekit.net/af/73d497/000000000000000000012b3d/27/a?primer=b997bcdf54b83a9f7b731c29130c4fbe326c83acb7cf220896c6041d3c02ba6a&fvd=n4&v=3) format("opentype");font-weight:400;font-style:normal;}@font-face{font-family:adelle;src:url(https://use.typekit.net/af/771603/000000000000000000012b3e/27/l?primer=b997bcdf54b83a9f7b731c29130c4fbe326c83acb7cf220896c6041d3c02ba6a&fvd=i4&v=3) format("woff2"),url(https://use.typekit.net/af/771603/000000000000000000012b3e/27/d?primer=b997bcdf54b83a9f7b731c29130c4fbe326c83acb7cf220896c6041d3c02ba6a&fvd=i4&v=3) format("woff"),url(https://use.typekit.net/af/771603/000000000000000000012b3e/27/a?primer=b997bcdf54b83a9f7b731c29130c4fbe326c83acb7cf220896c6041d3c02ba6a&fvd=i4&v=3) format("opentype");font-weight:400;font-style:italic;}@font-face{font-family:adelle;src:url(https://use.typekit.net/af/f2eefa/000000000000000000012b3f/27/l?primer=b997bcdf54b83a9f7b731c29130c4fbe326c83acb7cf220896c6041d3c02ba6a&fvd=n6&v=3) format("woff2"),url(https://use.typekit.net/af/f2eefa/000000000000000000012b3f/27/d?primer=b997bcdf54b83a9f7b731c29130c4fbe326c83acb7cf220896c6041d3c02ba6a&fvd=n6&v=3) format("woff"),url(https://use.typekit.net/af/f2eefa/000000000000000000012b3f/27/a?primer=b997bcdf54b83a9f7b731c29130c4fbe326c83acb7cf220896c6041d3c02ba6a&fvd=n6&v=3) format("opentype");font-weight:600;font-style:normal;}@font-face{font-family:myriad-pro;src:url(https://use.typekit.net/af/1b1b1e/00000000000000000001709e/27/l?primer=b997bcdf54b83a9f7b731c29130c4fbe326c83acb7cf220896c6041d3c02ba6a&fvd=n7&v=3) format("woff2"),url(https://use.typekit.net/af/1b1b1e/00000000000000000001709e/27/d?primer=b997bcdf54b83a9f7b731c29130c4fbe326c83acb7cf220896c6041d3c02ba6a&fvd=n7&v=3) format("woff"),url(https://use.typekit.net/af/1b1b1e/00000000000000000001709e/27/a?primer=b997bcdf54b83a9f7b731c29130c4fbe326c83acb7cf220896c6041d3c02ba6a&fvd=n7&v=3) format("opentype");font-weight:700;font-style:normal;}@font-face{font-family:myriad-pro;src:url(https://use.typekit.net/af/cafa63/00000000000000000001709a/27/l?primer=b997bcdf54b83a9f7b731c29130c4fbe326c83acb7cf220896c6041d3c02ba6a&fvd=n4&v=3) format("woff2"),url(https://use.typekit.net/af/cafa63/00000000000000000001709a/27/d?primer=b997bcdf54b83a9f7b731c29130c4fbe326c83acb7cf220896c6041d3c02ba6a&fvd=n4&v=3) format("woff"),url(https://use.typekit.net/af/cafa63/00000000000000000001709a/27/a?primer=b997bcdf54b83a9f7b731c29130c4fbe326c83acb7cf220896c6041d3c02ba6a&fvd=n4&v=3) format("opentype");font-weight:400;font-style:normal;}@font-face{font-family:lato;src:url(https://use.typekit.net/af/220823/000000000000000000015231/27/l?primer=7ceb210e49ade74e23101e10f006f110a0b6588c7c57777a6e3d98a38b749696&fvd=n7&v=3) format("woff2"),url(https://use.typekit.net/af/220823/000000000000000000015231/27/d?primer=7ceb210e49ade74e23101e10f006f110a0b6588c7c57777a6e3d98a38b749696&fvd=n7&v=3) format("woff"),url(https://use.typekit.net/af/220823/000000000000000000015231/27/a?primer=7ceb210e49ade74e23101e10f006f110a0b6588c7c57777a6e3d98a38b749696&fvd=n7&v=3) format("opentype");font-weight:700;font-style:normal;}@font-face{font-family:lato;src:url(https://use.typekit.net/af/a2df1e/00000000000000000001522a/27/l?primer=7ceb210e49ade74e23101e10f006f110a0b6588c7c57777a6e3d98a38b749696&fvd=n3&v=3) format("woff2"),url(https://use.typekit.net/af/a2df1e/00000000000000000001522a/27/d?primer=7ceb210e49ade74e23101e10f006f110a0b6588c7c57777a6e3d98a38b749696&fvd=n3&v=3) format("woff"),url(https://use.typekit.net/af/a2df1e/00000000000000000001522a/27/a?primer=7ceb210e49ade74e23101e10f006f110a0b6588c7c57777a6e3d98a38b749696&fvd=n3&v=3) format("opentype");font-weight:300;font-style:normal;}@font-face{font-family:azo-sans-web;src:url(https://use.typekit.net/af/bdcabe/000000000000000000013f48/27/l?primer=b997bcdf54b83a9f7b731c29130c4fbe326c83acb7cf220896c6041d3c02ba6a&fvd=n3&v=3) format("woff2"),url(https://use.typekit.net/af/bdcabe/000000000000000000013f48/27/d?primer=b997bcdf54b83a9f7b731c29130c4fbe326c83acb7cf220896c6041d3c02ba6a&fvd=n3&v=3) format("woff"),url(https://use.typekit.net/af/bdcabe/000000000000000000013f48/27/a?primer=b997bcdf54b83a9f7b731c29130c4fbe326c83acb7cf220896c6041d3c02ba6a&fvd=n3&v=3) format("opentype");font-weight:300;font-style:normal;}@font-face{font-family:azo-sans-web;src:url(https://use.typekit.net/af/ef7655/000000000000000000013f63/27/l?primer=b997bcdf54b83a9f7b731c29130c4fbe326c83acb7cf220896c6041d3c02ba6a&fvd=n5&v=3) format("woff2"),url(https://use.typekit.net/af/ef7655/000000000000000000013f63/27/d?primer=b997bcdf54b83a9f7b731c29130c4fbe326c83acb7cf220896c6041d3c02ba6a&fvd=n5&v=3) format("woff"),url(https://use.typekit.net/af/ef7655/000000000000000000013f63/27/a?primer=b997bcdf54b83a9f7b731c29130c4fbe326c83acb7cf220896c6041d3c02ba6a&fvd=n5&v=3) format("opentype");font-weight:500;font-style:normal;}@font-face{font-family:azo-sans-web;src:url(https://use.typekit.net/af/9dc3b1/000000000000000000013f8f/27/l?primer=b997bcdf54b83a9f7b731c29130c4fbe326c83acb7cf220896c6041d3c02ba6a&fvd=n4&v=3) format("woff2"),url(https://use.typekit.net/af/9dc3b1/000000000000000000013f8f/27/d?primer=b997bcdf54b83a9f7b731c29130c4fbe326c83acb7cf220896c6041d3c02ba6a&fvd=n4&v=3) format("woff"),url(https://use.typekit.net/af/9dc3b1/000000000000000000013f8f/27/a?primer=b997bcdf54b83a9f7b731c29130c4fbe326c83acb7cf220896c6041d3c02ba6a&fvd=n4&v=3) format("opentype");font-weight:400;font-style:normal;}</style><script type="text/javascript" async="" charset="utf-8" id="utag_credera.main_1" src="MongoDB%20Explained%20in%205%20Minutes%20or%20Less%20-%20Credera_files/utag_004.js"></script><script type="text/javascript" async="" charset="utf-8" id="utag_credera.main_3" src="MongoDB%20Explained%20in%205%20Minutes%20or%20Less%20-%20Credera_files/utag_003.js"></script><script src="MongoDB%20Explained%20in%205%20Minutes%20or%20Less%20-%20Credera_files/count-data.js"></script><style type="text/css">@font-face{font-family:proxima-nova;src:url(https://use.typekit.net/af/55bd39/00000000000000003b9b093f/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n9&v=3) format("woff2"),url(https://use.typekit.net/af/55bd39/00000000000000003b9b093f/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n9&v=3) format("woff"),url(https://use.typekit.net/af/55bd39/00000000000000003b9b093f/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n9&v=3) format("opentype");font-weight:900;font-style:normal;}@font-face{font-family:proxima-nova;src:url(https://use.typekit.net/af/71f83c/00000000000000003b9b093b/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3) format("woff2"),url(https://use.typekit.net/af/71f83c/00000000000000003b9b093b/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3) format("woff"),url(https://use.typekit.net/af/71f83c/00000000000000003b9b093b/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3) format("opentype");font-weight:700;font-style:normal;}@font-face{font-family:proxima-nova;src:url(https://use.typekit.net/af/a3eee8/00000000000000003b9b093c/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n8&v=3) format("woff2"),url(https://use.typekit.net/af/a3eee8/00000000000000003b9b093c/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n8&v=3) format("woff"),url(https://use.typekit.net/af/a3eee8/00000000000000003b9b093c/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n8&v=3) format("opentype");font-weight:800;font-style:normal;}@font-face{font-family:proxima-nova;src:url(https://use.typekit.net/af/27776b/00000000000000003b9b0939/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n6&v=3) format("woff2"),url(https://use.typekit.net/af/27776b/00000000000000003b9b0939/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n6&v=3) format("woff"),url(https://use.typekit.net/af/27776b/00000000000000003b9b0939/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n6&v=3) format("opentype");font-weight:600;font-style:normal;}@font-face{font-family:proxima-nova;src:url(https://use.typekit.net/af/4838bd/00000000000000003b9b0934/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3) format("woff2"),url(https://use.typekit.net/af/4838bd/00000000000000003b9b0934/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3) format("woff"),url(https://use.typekit.net/af/4838bd/00000000000000003b9b0934/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3) format("opentype");font-weight:400;font-style:normal;}@font-face{font-family:proxima-nova;src:url(https://use.typekit.net/af/1cd3b2/00000000000000003b9b0937/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i5&v=3) format("woff2"),url(https://use.typekit.net/af/1cd3b2/00000000000000003b9b0937/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i5&v=3) format("woff"),url(https://use.typekit.net/af/1cd3b2/00000000000000003b9b0937/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i5&v=3) format("opentype");font-weight:500;font-style:italic;}</style><script type="text/javascript" async="" charset="utf-8" id="tiqapp" src="MongoDB%20Explained%20in%205%20Minutes%20or%20Less%20-%20Credera_files/utag.js"></script><style type="text/css">@charset "UTF-8";@font-face{font-family:FontAwesome;font-weight:400;font-style:normal;src:url(//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.eot);src:url(//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.eot#iefix) format("embedded-opentype"),url(//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.ttf) format("truetype"),url(//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.woff) format("woff"),url(//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.woff2) format("woff2"),url(//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.svg#fontawesomeregular) format("svg")}@font-face{font-family:Open Sans;font-style:normal;font-weight:400;src:local("Open Sans Regular"),local("OpenSans-Regular"),url(https://fonts.gstatic.com/s/opensans/v15/mem8YaGs126MiZpBA-UFVZ0e.ttf) format("truetype")}@font-face{font-family:Open Sans;font-style:normal;font-weight:600;src:local("Open Sans SemiBold"),local("OpenSans-SemiBold"),url(https://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UNirkOUuhs.ttf) format("truetype")}.auryc-feedback *{font-family:Open Sans,sans-serif!important;float:none!important;text-transform:none!important;height:auto}.auryc-feedback{display:block;font-size:10px!important;line-height:1.599!important;padding:2em!important;text-align:left!important;border-radius:5px!important;resize:both!important}.auryc-fbmodal-wrapper,.auryc-feedback{font-family:Open Sans,sans-serif!important;color:#4a4a4a}.auryc-fbmodal-wrapper{display:block;position:fixed!important;z-index:2147483647!important;width:100%!important;height:100%!important;left:0!important;top:0!important;padding:0!important;margin:0!important;display:table}.auryc-fbmodal-bground{opacity:0!important}.auryc-fbmodal-bground,.auryc-fbmodal-bground-enabled{width:100%!important;height:100%!important;left:0!important;top:0!important;padding:0!important;margin:0!important;position:fixed!important;z-index:900!important}.auryc-fbmodal-bground-enabled{opacity:.79!important;-webkit-transition:opacity .4s!important;transition:opacity .4s!important;background:#292d33}.auryc-fbmodal-container{width:100%!important;height:100%!important;left:0!important;top:0!important;position:fixed!important;overflow:scroll!important;padding:0!important;margin:0!important;z-index:2147483647!important}.auryc-fbmodal-content{display:block;font-size:18px!important;margin:0 auto 100px!important;text-align:left!important;padding:9.5px!important;height:100%!important;width:calc(99vw - 19px)!important;-webkit-font-smoothing:antialiased!important;-moz-osx-font-smoothing:grayscale!important}@media (min-width:480px){.auryc-fbmodal-content{max-width:540px!important}}.auryc-fbmodal-body{display:block;opacity:0!important;width:100%!important}.auryc-fbmodal-body-enabled{background:#fff;-webkit-box-shadow:0 0 39px 0 rgba(0,0,0,.3)!important;box-shadow:0 0 39px 0 rgba(0,0,0,.3)!important;display:block;border-radius:4.9px!important;opacity:1!important;-webkit-transition:opacity .4s ease!important;transition:opacity .4s ease!important;width:100%!important;text-align:center!important}.auryc-fbmodal-head{opacity:0!important}.auryc-fbmodal-head,.auryc-fbmodal-head-enabled{width:100%!important;display:block;clear:both!important}.auryc-fbmodal-head-enabled{opacity:1!important;-webkit-transition:opacity .4s ease!important;transition:opacity .4s ease!important}.auryc-fb-modal-closebtn{top:14px!important;left:-14px!important;width:20px!important;height:20px!important;float:right!important;opacity:.49!important;position:relative!important}.auryc-fb-modal-closebtn:hover{cursor:pointer!important;opacity:1!important}#auryc-feedback-canvas{margin-top:15px!important;position:relative!important;text-align:right!important;width:100%!important}.auryc-feedback-fbquestiongroup{display:none}.auryc-feedback-fbquestiongroup-shown{display:block}#auryc-feedback-tab.auryc-feedback-tab-loc-br-horizontal{margin-right:.59em!important;left:auto!important;right:0!important;position:fixed!important;top:auto!important;display:block;-webkit-box-sizing:border-box!important;box-sizing:border-box!important;bottom:.59em;overflow:hidden!important}#auryc-feedback-tab.auryc-feedback-tab-loc-br-horizontal .auryc-feedback-tab-label{padding-left:.29em!important}#auryc-feedback-tab.auryc-feedback-tab-loc-br{margin-right:.29em!important;left:auto!important;right:0!important;top:auto!important;bottom:.59em;-webkit-transform:rotate(-90deg) translate(100%,22%)!important;transform:rotate(-90deg) translate(100%,22%)!important;-webkit-transform-origin:100% 100%!important;transform-origin:100% 100%!important;border-radius:5px 5px 0 0!important;-webkit-box-shadow:0 -2px 4px rgba(0,0,0,.1)!important;box-shadow:0 -2px 4px rgba(0,0,0,.1)!important}#auryc-feedback-tab.auryc-feedback-tab-loc-bl-horizontal{margin-right:.59em!important;position:fixed!important;right:auto!important;-webkit-box-sizing:border-box!important;box-sizing:border-box!important;overflow:hidden!important;margin-left:.59em!important;top:auto!important;display:block;bottom:1.19em!important}#auryc-feedback-tab.auryc-feedback-tab-loc-bl-horizontal .auryc-feedback-tab-label{padding-right:.29em!important;padding-left:.29em!important}#auryc-feedback-tab.auryc-feedback-tab-loc-bl{right:auto!important;margin-left:.59em!important;top:auto!important;bottom:1.2em!important;-webkit-transform:translate(-8%,100%) rotate(-90deg)!important;transform:translate(-8%,100%) rotate(-90deg)!important;-webkit-transform-origin:0 0!important;transform-origin:0 0!important;border-radius:0 0 5px 5px!important;-webkit-box-shadow:0 -2px 4px rgba(0,0,0,.1)!important;box-shadow:0 -2px 4px rgba(0,0,0,.1)!important}#auryc-feedback-tab.auryc-feedback-tab-loc-tr-horizontal{margin-right:.59em!important;position:fixed!important;left:auto!important;right:0!important;top:.59em!important;-webkit-box-sizing:border-box!important;box-sizing:border-box!important;overflow:hidden!important;margin-left:.59em!important;display:block;bottom:auto!important}#auryc-feedback-tab.auryc-feedback-tab-loc-tr-horizontal .auryc-feedback-tab-label{padding-left:.29em!important}#auryc-feedback-tab.auryc-feedback-tab-loc-tr{-webkit-transform:rotate(-90deg) translateY(-78%)!important;transform:rotate(-90deg) translateY(-78%)!important;-webkit-transform-origin:100% 0!important;transform-origin:100% 0!important;border-radius:5px 5px 0 0!important;-webkit-box-shadow:0 -2px 4px rgba(0,0,0,.1)!important;box-shadow:0 -2px 4px rgba(0,0,0,.1)!important;left:auto!important;right:0!important;top:.59em!important;position:fixed!important;margin-right:.29em!important}#auryc-feedback-tab.auryc-feedback-tab-loc-tr .auryc-feedback-tab-label:before{content:"";font-family:fontawesome!important;padding-left:5px!important}#auryc-feedback-tab.auryc-feedback-tab-loc-tl-horizontal{position:fixed!important;left:0!important;right:auto!important;top:.59em!important;-webkit-box-sizing:border-box!important;box-sizing:border-box!important;overflow:hidden!important;margin-left:.59em!important;display:block;bottom:auto!important}#auryc-feedback-tab.auryc-feedback-tab-loc-tl-horizontal .auryc-feedback-tab-label{padding-right:.29em!important;padding-left:.29em!important}#auryc-feedback-tab.auryc-feedback-tab-loc-tl{-webkit-transform:rotate(-90deg) translate(-100%,-22%)!important;transform:rotate(-90deg) translate(-100%,-22%)!important;-webkit-transform-origin:0 0!important;transform-origin:0 0!important;border-radius:0 0 5px 5px!important;-webkit-box-shadow:0 -2px 4px rgba(0,0,0,.1)!important;box-shadow:0 -2px 4px rgba(0,0,0,.1)!important;right:auto!important;margin-left:.29em!important;top:.59em!important}#auryc-feedback-tab.auryc-feedback-tab-loc-cl-horizontal{position:fixed!important;left:0!important;right:auto!important;top:50%!important;-webkit-box-sizing:border-box!important;box-sizing:border-box!important;overflow:hidden!important;margin-left:.59em!important;display:block;bottom:auto!important}#auryc-feedback-tab.auryc-feedback-tab-loc-cl-horizontal .auryc-feedback-tab-label{padding-right:.29em!important;padding-left:.29em!important}#auryc-feedback-tab.auryc-feedback-tab-loc-cl{right:auto!important;margin-left:.29em!important;top:50%!important;-webkit-transform:rotate(-90deg) translate(-50%,-22%)!important;transform:rotate(-90deg) translate(-50%,-22%)!important;-webkit-transform-origin:0 0!important;transform-origin:0 0!important;border-radius:0 0 5px 5px!important;-webkit-box-shadow:0 -2px 4px rgba(0,0,0,.1)!important;box-shadow:0 -2px 4px rgba(0,0,0,.1)!important}#auryc-feedback-tab.auryc-feedback-tab-loc-cr-horizontal{position:fixed!important;left:auto!important;right:0!important;top:50%!important;-webkit-box-sizing:border-box!important;box-sizing:border-box!important;overflow:hidden!important;margin-left:.59em!important;display:block;bottom:auto!important}#auryc-feedback-tab.auryc-feedback-tab-loc-cr-horizontal .auryc-feedback-tab-label{padding-left:.29em!important}#auryc-feedback-tab.auryc-feedback-tab-loc-cr{-webkit-transform:rotate(-90deg) translate(50%,-78%)!important;transform:rotate(-90deg) translate(50%,-78%)!important;-webkit-transform-origin:100% 0!important;transform-origin:100% 0!important;border-radius:5px 5px 0 0!important;-webkit-box-shadow:0 -2px 4px rgba(0,0,0,.1)!important;box-shadow:0 -2px 4px rgba(0,0,0,.1)!important;position:fixed!important;left:auto!important;right:0!important;top:50%!important;-webkit-box-sizing:border-box!important;box-sizing:border-box!important;overflow:hidden!important;margin-right:.29em!important;display:block;bottom:auto!important}.auryc-fb-validation-msg-section{font-family:Open Sans,sans-serif!important;font-size:14px!important;color:#fc6a56;border-radius:.49em!important;margin-bottom:.49em!important;margin-top:2em!important;display:none;text-align:left!important}#auryc-feedback-tab{position:fixed!important;top:0!important;left:0!important;display:block;background:#692893;opacity:.85!important;cursor:pointer!important;-webkit-box-sizing:border-box!important;box-sizing:border-box!important;z-index:2147483647!important;font-size:80%!important;-webkit-font-smoothing:antialiased!important;-moz-osx-font-smoothing:grayscale!important}.auryc-feedback-tab-label{font-family:Open Sans,sans-serif!important;color:#fff;font-size:13px!important;z-index:5!important;font-weight:600!important;line-height:30px!important;letter-spacing:.1px!important}.auryc-feedback div,.auryc-feedback fieldset,.auryc-feedback h1,.auryc-feedback h2,.auryc-feedback img,.auryc-feedback label,.auryc-feedback p,.auryc-feedback span{margin:0!important;font:inherit!important;padding:0!important;border:0!important;vertical-align:baseline!important}#auryc-feedback-tab.auryc-feedback-tab-dt-desktop,#auryc-feedback-tab.auryc-feedback-tab-dt-tablet{height:30px!important;display:block;border-radius:100px;-webkit-box-shadow:0 1px 2px 1px rgba(41,46,63,.26)!important;box-shadow:0 1px 2px 1px rgba(41,46,63,.26)!important;padding:0 12px!important;overflow:hidden!important}#auryc-feedback-tab.auryc-feedback-tab-dt-smartphone{width:40px!important;height:40px!important;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center!important;-ms-flex-align:center!important;align-items:center!important;-webkit-box-pack:center!important;-ms-flex-pack:center!important;justify-content:center!important;background:#2f8cff;border-radius:50%!important;cursor:pointer!important;fill:#fff;-webkit-box-shadow:0 1px 5px rgba(0,0,0,.06),0 2px 30px rgba(0,0,0,.12)!important;box-shadow:0 1px 5px rgba(0,0,0,.06),0 2px 30px rgba(0,0,0,.12)!important;bottom:40px;margin-right:10px}@media print{#auryc-feedback-tab.auryc-feedback-tab-dt-desktop,#auryc-feedback-tab.auryc-feedback-tab-dt-tablet{display:none!important}}.auryc-feedback-spinner{display:block;top:1!important;left:1!important;position:absolute!important;z-index:2147483647!important}.auryc-feedback ::-webkit-input-placeholder{font-style:italic!important}.auryc-feedback :-moz-placeholder,.auryc-feedback ::-moz-placeholder{font-style:italic!important}.auryc-feedback :-ms-input-placeholder{font-style:italic!important}.auryc-fbmodal-body-selection{color:#4a4a4a;text-align:left!important;padding:25px 15px 15px!important}.auryc-fbmodal-body-selection .auryc-fbmodal-body-selection_title{font-size:18px!important;font-weight:600!important;line-height:24px!important}.auryc-fbmodal-body-selection .auryc-feedback-general,.auryc-fbmodal-body-selection .auryc-feedback-screenshot{background-color:#f6f6f6;border:1px solid #cfcfcf;border-radius:3px!important;-webkit-box-sizing:border-box!important;box-sizing:border-box!important;cursor:default!important;display:table;margin-top:10px!important;padding:5px!important;white-space:nowrap!important;width:100%!important}.auryc-fbmodal-body-selection .auryc-feedback-general .auryc-feedback_option_row,.auryc-fbmodal-body-selection .auryc-feedback-screenshot .auryc-feedback_option_row{display:table-row;height:60px!important}.auryc-fbmodal-body-selection .auryc-feedback-general .auryc-feedback_option_column,.auryc-fbmodal-body-selection .auryc-feedback-screenshot .auryc-feedback_option_column{display:table-cell;vertical-align:middle!important}.auryc-fbmodal-body-selection .auryc-feedback-general .auryc-feedback-selection__label1,.auryc-fbmodal-body-selection .auryc-feedback-screenshot .auryc-feedback-selection__label1{font-size:16px!important;font-weight:600!important;line-height:22px!important}.auryc-fbmodal-body-selection .auryc-feedback-general .auryc-feedback-selection__label2,.auryc-fbmodal-body-selection .auryc-feedback-screenshot .auryc-feedback-selection__label2{font-size:14px!important;font-weight:400!important;line-height:19px!important;white-space:normal!important}.auryc-fbmodal-body-selection .auryc-feedback-general .auryc-feedback-selection__labels,.auryc-fbmodal-body-selection .auryc-feedback-screenshot .auryc-feedback-selection__labels{padding-left:5px!important;vertical-align:middle!important}.auryc-fbmodal-body-selection .auryc-feedback-general .auryc-feedback_option_image,.auryc-fbmodal-body-selection .auryc-feedback-screenshot .auryc-feedback_option_image{width:50px!important}.auryc-fbmodal-body-selection .auryc-feedback-general img,.auryc-fbmodal-body-selection .auryc-feedback-screenshot img{vertical-align:middle!important;padding:0 5px!important}.auryc-fbmodal-body-selection .auryc-feedback-general:hover,.auryc-fbmodal-body-selection .auryc-feedback-screenshot:hover{background-color:#e4ecfc!important}div [dataType=auryc-fbq]>p{display:block;font-size:14px!important;text-align:center!important;font-weight:400!important;color:#4a4a4a;letter-spacing:0!important}.auryc-fbmodal-body-fbform,.auryc-fbmodal-body-selection{display:none}@media (min-width:1024px){.auryc-feedback{text-align:left!important}.auryc-feedback .auryc-fb-starrating-field{font-size:15px!important}}.auryc-feedback .auryc-feedback-fbform-headtag{font-family:light,Open Sans,sans-serif!important;margin-bottom:10px!important;line-height:1.2!important;color:#4a4a4a;letter-spacing:-.1px!important}.auryc-feedback .auryc-feedback-fbform-headtag-h1{font-size:25px!important;font-family:Open Sans,sans-serif!important;font-weight:400!important;text-align:center!important;width:inherit!important;text-transform:none!important}.auryc-feedback .auryc-feedback-fbform-headtag-h2{font-size:2.4em!important}.auryc-feedback .auryc-feedback-fblabel p{font-weight:600!important;font-size:14px!important;color:#4a4a4a;letter-spacing:0!important}.auryc-feedback p{font-size:1.2em!important;line-height:1.2!important;margin-bottom:.2em!important}.auryc-feedback .auryc-feedback-title-section{font-family:Open Sans,sans-serif!important;text-align:center!important;font-size:14px!important;margin-bottom:20px!important}.auryc-feedback .auryc-feedback-title-section .auryc-feedback-fblogo{height:3.49em!important;margin:0 auto 1.7em!important;display:block;max-height:144px!important;width:auto!important}.auryc-feedback .auryc-fb-starrating-field{width:96%!important;color:#cfcfcf!important;display:block;margin:0 auto!important;text-align:center!important;text-indent:0!important;white-space:nowrap!important}.auryc-feedback .auryc-fb-starrating-field label{color:#cfcfcf;float:none!important;height:auto!important}.auryc-fbmodal-body-fbform-enabled{display:block}#post-fb-resp-button{display:inline-block;background:#22c6f3;border:.9px solid #20c8f7;border-radius:2.9px!important;padding:.02em 4.49em!important;color:#555;resize:none!important;width:199px!important;height:35px!important;margin-top:19px!important;font-size:14px!important}.auryc-feedback .auryc-starrating-section{margin-bottom:.49em!important;font-size:18px!important;display:block;margin-top:10px!important}div[dataType=auryc-fbq]{display:block;margin-top:10px!important}.auryc-feedback-fbquestion,.auryc-feedback-fbquestion-dropdown{display:block}.auryc-feedback .auryc-feedback-fblabel{display:block;text-align:center!important;font-size:12px!important;font-family:Open Sans,sans-serif!important;color:#4a4a4a;font-weight:600!important;margin-bottom:0!important;float:none!important;height:auto!important}.auryc-feedback div[dataType=auryc-feedback-checkbox]>label,.auryc-feedback div[dataType=auryc-feedback-radio]>label{border:1px solid #979797!important;border-radius:3px!important}.auryc-feedback .auryc-feedback-fbemail,.auryc-feedback div[dataType=auryc-feedback-checkbox]>label,.auryc-feedback div[dataType=auryc-feedback-radio]>label{position:relative!important;background:#fff!important;width:100%!important;font-size:1.4em!important;resize:none!important;padding:.49em!important;-webkit-box-sizing:border-box!important;box-sizing:border-box!important;text-align:left!important;-webkit-appearance:none!important;-moz-appearance:none!important;-ms-appearance:none!important;-o-appearance:none!important;appearance:none!important}.auryc-feedback .auryc-feedback-fbemail{border:none!important;outline:none!important;border-bottom:1px solid #838aa4!important;border-radius:0!important}.auryc-feedback .auryc-feedback-question-textarea{position:relative!important;border-radius:3px!important;background:#fff!important;width:100%!important;font-size:1.4em!important;resize:none!important;padding:.49em!important;-webkit-box-sizing:border-box!important;box-sizing:border-box!important;text-align:left!important;-webkit-appearance:none!important;-moz-appearance:none!important;-ms-appearance:none!important;-o-appearance:none!important;appearance:none!important;height:54px!important;border:1px solid #d0d7e6!important}.auryc-feedback .auryc-feedback-fbtarea{display:block;position:relative!important;margin:0!important;text-align:right!important}.auryc-feedback .auryc-feedback-fbtarea .auryc-feedback-fbctrl{padding-bottom:1.2em!important;margin:0!important;max-width:100%!important}.auryc-feedback .auryc-feedback-question-dropdown-choose,.auryc-feedback .auryc-feedback-question-select-choose{position:relative!important;border-radius:none!important;background:#fff!important;width:100%!important;font-size:1.4em!important;resize:none!important;padding:.49em!important;-webkit-box-sizing:border-box!important;box-sizing:border-box!important;text-align:left!important;-webkit-appearance:none!important;-moz-appearance:none!important;-ms-appearance:none!important;-o-appearance:none!important;appearance:none!important;border:none!important;outline:none!important;color:#313943!important}.auryc-feedback .auryc-feedback-footer-section{display:block;position:relative!important;text-align:center!important}.auryc-feedback .auryc-feedback-footer-section .auryc-fbmodal-footer{background:inherit!important;position:relative!important;left:1px!important;display:table;font-size:10px!important;color:#4a4a4a!important;letter-spacing:-.35px!important;z-index:3!important;width:100%!important}.auryc-fbmodal-footer span{display:inline}.auryc-feedback .auryc-feedback-footer-section .auryc-fbmodal-footer img{display:inline;position:relative!important;top:-1px!important;left:1px!important;vertical-align:middle!important}.auryc-feedback .auryc-feedback-question-dropdown-choose:after,.auryc-feedback .auryc-feedback-question-select-choose:after{position:absolute!important;top:30%!important;right:1em!important;content:"";padding-left:5px!important;color:inherit!important;pointer-events:none!important;font-family:FontAwesome!important;line-height:1!important;-moz-osx-font-smoothing:grayscale!important;font-weight:400!important;font-stretch:normal!important;-webkit-font-feature-settings:normal!important;font-feature-settings:normal!important;font-variant:normal!important;font-size:inherit!important;text-rendering:auto!important;-webkit-font-smoothing:antialiased!important}.auryc-feedback .auryc-feedback-question-dropdown-choose .auryc-fb-dropdown-selector,.auryc-feedback .auryc-feedback-question-select-choose .auryc-fb-question-selector,.auryc-feedback .auryc-feedback-question-select-choose .auryc-fb-questiongroup-selector{position:absolute!important;left:0!important;top:0!important;width:100%!important;text-transform:none!important;cursor:pointer!important;font-size:14px!important;border:1px solid #d0d7e6!important;border-radius:3px!important;background:#fff!important;padding:4px!important;font-weight:600!important;color:#292e3f!important;-webkit-appearance:none!important;-moz-appearance:none!important;-ms-appearance:none!important;-o-appearance:none!important;appearance:none!important},.auryc-fb-question-selector::-ms-expand,.auryc-fb-questiongroup-selector::-ms-expand{display:none}.auryc-fb-questiongroup-selector:focus .auryc-fb-question-selector:focus{-webkit-box-shadow:0 0 1px 1px #23c6f5!important;box-shadow:0 0 1px 1px #23c6f5!important}.auryc-feedback .auryc-close-btn{width:222px!important;height:36px!important;position:relative!important;padding:.29em 1.9em!important;font-family:Open Sans,sans-serif!important;font-size:18px!important;line-height:0!important;text-align:center!important;color:#555!important;font-weight:400!important;display:inline-block;overflow:hidden!important;text-overflow:ellipsis!important;white-space:nowrap!important;border-radius:0!important;background-color:#464c55;border:1px solid #464c55;cursor:pointer!important;outline:0!important;margin:0 auto!important}.auryc-feedback .auryc-feedback-select-button{font-family:Open Sans,sans-serif!important;font-size:14px!important;font-weight:400!important;color:#4a4a4a!important;text-align:left!important}.auryc-feedback .post-fb-resp-button{padding:.49em .6999em!important;line-height:1.618!important;width:100%!important}.auryc-feedback .auryc-feedback-btn,.auryc-feedback .post-fb-resp-button{display:inline-block;overflow:hidden!important;text-overflow:ellipsis!important;white-space:nowrap!important;border-radius:0!important;background-color:#464c55;border:1px solid #464c55;cursor:pointer!important;color:#fff;font-size:1.7em!important;text-align:center!important;outline:0!important;font-weight:400!important;-webkit-transition:all .14s ease!important;transition:all .14s ease!important;margin:0 auto!important}.auryc-feedback .auryc-feedback-btn{padding:.49em .69999em!important;line-height:1.599!important}.auryc-feedback .auryc-fb-starrating-field .auryc-fb-starrating-field-staricon{font-size:6em!important;cursor:pointer!important;border:0!important}.auryc-feedback .auryc-fb-starrating-field .auryc-fb-starrating-field-staricon:before{font-family:Open Sans,sans-serif!important;content:""}.auryc-feedback .auryc-fb-starrating-field--disabled{color:#eaebec!important}.auryc-feedback .auryc-fb-starrating-field--disabled .auryc-fb-starrating-field-staricon{cursor:default!important;border:0!important}.auryc-feedback .auryc-fb-starrating-field input[type=radio]{display:none}.auryc-feedback input[type=text],.auryc-feedback textarea{font-family:Open Sans,sans-serif!important;height:100%!important;float:none!important;height:auto!important}.auryc-feedback .auryc-fb-starrating-field .auryc-fb-starrating-field-staricon:before,.auryc-feedback .auryc-fb-starrating-field label:before,.auryc-feedback .auryc-feedback-checkbox:before,.auryc-feedback .auryc-feedback-radio:before{font-family:FontAwesome!important;line-height:1!important;font-style:normal!important;font-weight:400!important;font-stretch:normal!important;-webkit-font-feature-settings:normal!important;font-feature-settings:normal!important;font-variant:normal!important;font-size:inherit!important;text-rendering:auto!important;-webkit-font-smoothing:antialiased!important;-moz-osx-font-smoothing:grayscale!important}.auryc-feedback .auryc-fb-starrating-field input.auryc-fb-starrating-field-staricon+label{padding:0!important;font-size:2em!important;cursor:pointer!important;display:inline;margin:0!important;border:0!important}.auryc-feedback .auryc-fb-starrating-field label:before{-webkit-transition:color .15s ease!important;transition:color .15s ease!important;content:"★";background:0 0!important;height:auto!important;width:auto!important;top:0!important}.auryc-feedback .auryc-fb-starrating-field input.auryc-fb-starrating-field-staricon:checked+label:before{content:"★";color:#ffaf40;background:0 0!important}.auryc-feedback .auryc-fb-starrating-field label.auryc-ratings-chosen:before{color:#ffaf40;content:"★"}.auryc-feedback .auryc-nps__container{border:1px solid #f6f7f9!important;border-radius:5px!important;padding:10px 0!important;background-color:transparent!important}@media (max-width:360px) and (orientation:portrait){.auryc-feedback .auryc-nps__container{padding:10px 0 0!important}}.auryc-feedback .auryc-nps__container .nps-rating{padding:10px 10px 0!important;margin:auto auto 10px!important;min-height:35px!important;text-align:justify!important}.auryc-feedback .auryc-nps__container .nps-rating .nps-rating__labels{display:block}.auryc-feedback .auryc-nps__container .nps-rating .nps_rating_left_label,.auryc-feedback .auryc-nps__container .nps-rating .nps_rating_right_label{font-size:12px;color:#838aa4}.auryc-feedback .auryc-nps__container .nps-rating .nps_rating_left_label{float:left!important}.auryc-feedback .auryc-nps__container .nps-rating .nps_rating_right_label{float:right!important}.auryc-feedback .auryc-nps__container .nps-rating .nps-rating__badges{display:block;text-align:center!important;min-height:30px!important}.auryc-feedback .auryc-nps__container .nps-rating .nps-rating__badges label{padding:0!important;cursor:pointer!important;display:inline;margin:0!important;border:0!important}.auryc-feedback .auryc-nps__container .nps-rating .nps-rating__badges label:before{display:none}.auryc-feedback .auryc-nps__container .nps-rating .nps-rating__badges label:hover{color:#fff;background-color:#23c6f5}.auryc-feedback .auryc-nps__container .nps-rating .nps-rating__badges .nps-rating__badge{border-radius:50%!important;width:28px!important;padding:2px!important;font-size:12px!important;line-height:1em!important;position:relative!important;background:#f6f7f9;border:1px solid #d0d7e6;display:inline-block;-webkit-box-sizing:border-box!important;box-sizing:border-box!important}.auryc-feedback .auryc-nps__container .nps-rating .nps-rating__badges .aurycNpsRatingChecked,.auryc-feedback .auryc-nps__container .nps-rating .nps-rating__badges input[type=radio]:checked+label{color:#fff;background-color:#23c6f5}.auryc-feedback .auryc-nps__container .nps-rating .nps-rating__badges .nps-rating__badge .nps-rating__height_fix{margin-top:100%!important}.auryc-feedback .auryc-nps__container .nps-rating .nps-rating__badges .nps-rating__badge .nps-rating__num{position:absolute!important;left:0!important;top:50%!important;height:100%!important;width:100%!important;text-align:center!important;margin-top:-6px!important}.auryc-feedback .auryc-nps__container .nps-rating .nps-rating__badges .stretch{width:100%!important;display:inline-block;font-size:0!important;line-height:0!important;padding:0!important;margin:0!important;height:0!important}.auryc-feedback .auryc-nps__container .nps-rating .nps-rating__badges input[type=radio]{display:none}@media (max-width:420px) and (orientation:portrait){.auryc-feedback .auryc-nps__container .nps-rating .nps-rating__badges .nps-rating__badge{width:20px!important}}.auryc-feedback .auryc-feedback-checkbox,.auryc-feedback .auryc-feedback-radio{text-align:left!important;display:block;cursor:pointer!important}.auryc-feedback .auryc-feedback-checkbox:nth-child(1n+2),.auryc-feedback .auryc-feedback-radio:nth-child(1n+2){margin-top:.49em!important}.auryc-feedback .auryc-feedback-checkbox input,.auryc-feedback .auryc-feedback-radio input{display:none}.auryc-feedback .auryc-feedback-checkbox:before{content:"";padding-left:.29em!important;padding-right:.29em!important;color:inherit;opacity:.3}.auryc-feedback .auryc-feedback-checkbox.aurycChecked:before{content:"";opacity:1;color:#23c6f5}.auryc-feedback .auryc-feedback-radio:before{padding-left:.29em!important;padding-right:.29em!important;color:inherit;opacity:.3;content:"\f10c"}.auryc-feedback .auryc-feedback-radio.aurycChecked:before{content:"\f111";opacity:1;color:#23c6f5}.aurycIsRequired{color:#ff4c88!important}</style><style type="text/css">.fb-desktop .auryc-feedback div[dataType=auryc-feedback-checkbox]>label,.fb-desktop .auryc-feedback div[dataType=auryc-feedback-radio]>label{border:0!important;vertical-align:middle!important}.auryc-feedback .auryc-feedback-title-section .auryc-feedback-fblogo{margin:0 0 20px!important}.fb-desktop .auryc-feedback h1{font-weight:600!important;font-size:18px!important;color:#292e3f!important;text-align:left!important}.fb-desktop .auryc-feedback p{font-size:13px!important;color:#505673!important;text-align:left!important}.fb-desktop .auryc-feedback .required-label{color:#ff4c88!important}.fb-desktop .auryc-feedback .auryc-feedback-fblabel{text-align:left!important;font-weight:600!important;font-size:12px!important;color:#292e3f!important}.fb-desktop .auryc-feedback .auryc-feedback-fblabel.aurycIsRequired{color:#ff4c88!important}.fb-desktop .auryc-feedback .auryc-fb-starrating-field{text-align:left!important}.fb-desktop .auryc-feedback .auryc-fb-starrating-field label{color:#d0d7e6!important}.fb-desktop .auryc-feedback .auryc-nps__container{background:transparent!important;border:transparent!important}.fb-desktop .auryc-feedback .auryc-nps__container .nps-rating .nps-rating__badges{display:-webkit-box!important;display:-ms-flexbox!important;display:flex!important;text-align:left!important;min-height:30px!important;-webkit-box-pack:justify!important;-ms-flex-pack:justify!important;justify-content:space-between!important;-ms-flex-flow:wrap!important;flex-flow:wrap!important}.fb-desktop .auryc-feedback .auryc-nps__container .nps-rating .nps-rating__badges .nps-rating__badge{border-radius:4px!important}.fb-desktop .auryc-feedback .auryc-feedback-radio:before{content:"\f1db"!important;font-size:18px!important;opacity:1!important;padding-left:4px!important;padding-right:4px!important}.fb-desktop .auryc-feedback .auryc-feedback-radio.aurycCheckedOverride:before{border:1px solid #000!important;border-radius:12px!important;content:"\f111"!important;font-size:14px!important;margin:3px!important;padding:1px 2px!important;opacity:1!important}.fb-desktop .auryc-feedback .auryc-feedback-checkbox:before{content:"\f096";font-size:20px!important;padding-left:4px!important;padding-right:4px!important;opacity:1!important}.auryc-feedback .auryc-feedback-checkbox.aurycCheckedOverride:before{padding-left:3px!important;padding-right:3px!important}.fb-desktop .auryc-feedback .auryc-feedback-checkbox,.fb-desktop .auryc-feedback .auryc-feedback-radio{display:inline!important;outline:none!important;padding:0!important}</style><script type="text/javascript" async="" charset="utf-8" id="tealium_visitor_service_1main" src="MongoDB%20Explained%20in%205%20Minutes%20or%20Less%20-%20Credera_files/01677f4eabca0089ec69523598900104c005700900bd0.js"></script><script src="MongoDB%20Explained%20in%205%20Minutes%20or%20Less%20-%20Credera_files/alfie.js" async="" charset="UTF-8"></script></head>
+<body class="post-template-default single single-post postid-9869 single-format-standard ng-scope" ng-app="crederaApp" data-gr-c-s-loaded="true"><noscript><meta HTTP-EQUIV="refresh" content="0;url='https://www.credera.com/blog/technology-insights/java/mongodb-explained-5-minutes-less/?PageSpeed=noscript'" /><style><!--table,div,span,font,p{display:none} --></style><div style="display:block">Please click <a href="https://www.credera.com/blog/technology-insights/java/mongodb-explained-5-minutes-less/?PageSpeed=noscript">here</a> if you are not redirected within a few seconds.</div></noscript>
+<!-- ONLY FOR DEV / REMOVE FOR PROD -->
+<!-- <div class='onion'></div> -->
+<div class="on-load-page" style="display: none;">
+<div class="loading-wrapper">
+<div class="loading">
+<div class="ldr-row">
+<div class="ldr-box ldr-round1"></div>
+<div class="ldr-box ldr-round2"></div>
+<div class="ldr-box ldr-round3"></div>
+<div class="ldr-box ldr-round4"></div>
+</div>
+<div class="ldr-row">
+<div class="ldr-box ldr-round2"></div>
+<div class="ldr-box ldr-round3 ldr-mute"></div>
+<div class="ldr-box ldr-round4 ldr-mute"></div>
+<div class="ldr-box ldr-round5"></div>
+</div>
+<div class="ldr-row">
+<div class="ldr-box ldr-round3"></div>
+<div class="ldr-box ldr-round4 ldr-mute"></div>
+<div class="ldr-box ldr-round5 ldr-mute"></div>
+<div class="ldr-box ldr-round6 pre-credera-top"></div>
+</div>
+<div class="ldr-row">
+<div class="ldr-box ldr-round4"></div>
+<div class="ldr-box ldr-round5"></div>
+<div class="ldr-box ldr-round6 pre-credera-left"></div>
+<div class="ldr-box ldr-round7 credera"></div>
+</div>
+</div>
+</div></div>
+<!--[if lt IE 7]>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+<div class="sticky" style="visibility:hidden; background-color: rgba(255,255,255,.9); filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFFFFFF', endColorstr='#FFFFFFFF'); background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiP…B3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA=); background-size: 100%; background-image: -webkit-gradient(linear,50% 0,50% 100%,color-stop(0,#fff),color-stop(100%,rgba(255,255,255,0))); background-image: -webkit-linear-gradient(top,#fff 0,rgba(255,255,255,0) 100%); background-image: linear-gradient(to bottom,#fff 0,rgba(255,255,255,0) 100%); border: 1px solid #e9e9e9; box-shadow: 0 0 5px 5px rgba(0,0,0,.2); top: 0;">
+<nav class="navbar navbar-default cra-global-nav-bar" role="navigation" id="craNavigationBar" style="width: 100%; border-radius: 0; border: none; background-color: transparent; float: none; margin: 0 auto; display: table; table-layout: fixed; position: relative; min-height: 50px;">
+<div class="container center-column" style=" width: 100%; max-width: 1150px; margin: 0 auto; padding-left: 15px; padding-right: 15px;">
+<!-- Brand and toggle get grouped for better mobile display -->
+<div class="navbar-header">
+<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#craNavbarCollapse">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<a class="navbar-brand" href="https://www.credera.com/"><script data-pagespeed-no-defer="" type="text/javascript">//<![CDATA[
+(function(){for(var g="function"==typeof Object.defineProperties?Object.defineProperty:function(b,c,a){if(a.get||a.set)throw new TypeError("ES3 does not support getters and setters.");b!=Array.prototype&&b!=Object.prototype&&(b[c]=a.value)},h="undefined"!=typeof window&&window===this?this:"undefined"!=typeof global&&null!=global?global:this,k=["String","prototype","repeat"],l=0;l<k.length-1;l++){var m=k[l];m in h||(h[m]={});h=h[m]}var n=k[k.length-1],p=h[n],q=p?p:function(b){var c;if(null==this)throw new TypeError("The 'this' value for String.prototype.repeat must not be null or undefined");c=this+"";if(0>b||1342177279<b)throw new RangeError("Invalid count value");b|=0;for(var a="";b;)if(b&1&&(a+=c),b>>>=1)c+=c;return a};q!=p&&null!=q&&g(h,n,{configurable:!0,writable:!0,value:q});var t=this;function u(b,c){var a=b.split("."),d=t;a[0]in d||!d.execScript||d.execScript("var "+a[0]);for(var e;a.length&&(e=a.shift());)a.length||void 0===c?d[e]?d=d[e]:d=d[e]={}:d[e]=c};function v(b){var c=b.length;if(0<c){for(var a=Array(c),d=0;d<c;d++)a[d]=b[d];return a}return[]};function w(b){var c=window;if(c.addEventListener)c.addEventListener("load",b,!1);else if(c.attachEvent)c.attachEvent("onload",b);else{var a=c.onload;c.onload=function(){b.call(this);a&&a.call(this)}}};var x;function y(b,c,a,d,e){this.h=b;this.j=c;this.l=a;this.f=e;this.g={height:window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight,width:window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth};this.i=d;this.b={};this.a=[];this.c={}}function z(b,c){var a,d,e=c.getAttribute("data-pagespeed-url-hash");if(a=e&&!(e in b.c))if(0>=c.offsetWidth&&0>=c.offsetHeight)a=!1;else{d=c.getBoundingClientRect();var f=document.body;a=d.top+("pageYOffset"in window?window.pageYOffset:(document.documentElement||f.parentNode||f).scrollTop);d=d.left+("pageXOffset"in window?window.pageXOffset:(document.documentElement||f.parentNode||f).scrollLeft);f=a.toString()+","+d;b.b.hasOwnProperty(f)?a=!1:(b.b[f]=!0,a=a<=b.g.height&&d<=b.g.width)}a&&(b.a.push(e),b.c[e]=!0)}y.prototype.checkImageForCriticality=function(b){b.getBoundingClientRect&&z(this,b)};u("pagespeed.CriticalImages.checkImageForCriticality",function(b){x.checkImageForCriticality(b)});u("pagespeed.CriticalImages.checkCriticalImages",function(){A(x)});function A(b){b.b={};for(var c=["IMG","INPUT"],a=[],d=0;d<c.length;++d)a=a.concat(v(document.getElementsByTagName(c[d])));if(a.length&&a[0].getBoundingClientRect){for(d=0;c=a[d];++d)z(b,c);a="oh="+b.l;b.f&&(a+="&n="+b.f);if(c=!!b.a.length)for(a+="&ci="+encodeURIComponent(b.a[0]),d=1;d<b.a.length;++d){var e=","+encodeURIComponent(b.a[d]);131072>=a.length+e.length&&(a+=e)}b.i&&(e="&rd="+encodeURIComponent(JSON.stringify(B())),131072>=a.length+e.length&&(a+=e),c=!0);C=a;if(c){d=b.h;b=b.j;var f;if(window.XMLHttpRequest)f=new XMLHttpRequest;else if(window.ActiveXObject)try{f=new ActiveXObject("Msxml2.XMLHTTP")}catch(r){try{f=new ActiveXObject("Microsoft.XMLHTTP")}catch(D){}}f&&(f.open("POST",d+(-1==d.indexOf("?")?"?":"&")+"url="+encodeURIComponent(b)),f.setRequestHeader("Content-Type","application/x-www-form-urlencoded"),f.send(a))}}}function B(){var b={},c;c=document.getElementsByTagName("IMG");if(!c.length)return{};var a=c[0];if(!("naturalWidth"in a&&"naturalHeight"in a))return{};for(var d=0;a=c[d];++d){var e=a.getAttribute("data-pagespeed-url-hash");e&&(!(e in b)&&0<a.width&&0<a.height&&0<a.naturalWidth&&0<a.naturalHeight||e in b&&a.width>=b[e].o&&a.height>=b[e].m)&&(b[e]={rw:a.width,rh:a.height,ow:a.naturalWidth,oh:a.naturalHeight})}return b}var C="";u("pagespeed.CriticalImages.getBeaconData",function(){return C});u("pagespeed.CriticalImages.Run",function(b,c,a,d,e,f){var r=new y(b,c,a,e,f);x=r;d&&w(function(){window.setTimeout(function(){A(r)},0)})});})();pagespeed.CriticalImages.Run('/mod_pagespeed_beacon','https://www.credera.com/blog/technology-insights/java/mongodb-explained-5-minutes-less/','9lOjogTAYS',true,false,'q8OMU9J2C8g');
+//]]></script><img class="credera-logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAAA0CAMAAABmSddHAAAABGdBTUEAALGPC/xhBQAAAEVQTFRFAAAAmpmamZiZmZiZxR8zxSAyn5+fm5ebmZmZmZmZl5eXmZiZmpqampmampqamZmZmpiamZmZxB8yxCAzxSAzxSAzmpmaTWv5RgAAABV0Uk5TAN/vn4C/EEC/gCDPMK9gj3BQYN/vc7L7fAAAA2RJREFUaN7tmdmS2yAQRVlmaBaBpJnk/v+n5sGWzCojl1VTSegnlzHQfegNzH6/IB/sP5ABZoAZYAaYAWaAGWAGmAFmgBlgBpgBZoB5Ecyvz6p8vwCGiOivo0EtMJ/133+cBRM0AABuUeXmuIubbXsQAGDSQb1NlEHVdtXxXN3aVU5tvXm4FMzKH/qJ9ch28xIYAMKoF8EAmJsOA3clmBmAXxVjbJUAZGk7ERHRLEoyBCy0i80Nd0REZDwAN1XAuMfcqbHwwkuVNvHAdB0YA/A9Vq0rjCfg/kk5wJbUmivr3Q2sBMTUHq85w7aw8q09bHyMbwdDgIvcXDkRWmCYLdy6EwxjAZHbnwLDlIBvHSmEugoMh0i8QFnWBFOa0g2GLWUcdoJhEqKhugHCRWACsDwpiREYk6vYD4bpwrxeMCbSIK4ZgJK7H74bjG+cRh2MBH8ZTADWt4LxkIz29PtuMO2UXwPDXw8lpirlvA+MLtPTLeERY3zT/81gpkeQdoAp4+4EGOZyDp1gqNI/McYM+C11qSvAHBqWg1kArsqapjeZjsHoEozY585NxYJ4lJ409S43P1x+DsxNd1HpRZLOl06DaTa+D+K1Xe+p18Zp70fAbCItO+p81WkwrtX4xrt6W49TvwGiC8Cop9WaEWCMMXM10s/kGJ7n+Sc5RhpjTKs42L3G3Zd9d1Xija6yzDE+6wTPgrHFGfQk3zm6DqUXPP4o5uoCMLK4/rTA2FpnfgKMKUzsAaN4tVYzESe35QIw09NGZq9KS9GhnQGjRIGhq1yv1WAPyXMHv+Ku5LNORrnm7doV1foEGP+0ajUW1rVqrSPvJWC9AIwVCRnlcgMeYKj6HtMFRvmKZ/aBsShD2CbOy+E7wXylT8Bfh6EyCWDeziSUz0JR5yuLNNEHRi2iFrGdna8p95iTO9sC2D4w52TiALwhCjNH1SnaeWKrqjcJueHcGGO8a7xP3sfvYpvEeX51ZSLR0gLmCjBMzVEHOh1dIkN+tUrffNudrbTPHsPLACbWCuGQlVIPnoH5/ijlizEyiTz/W0QFrwGnTaVnmHRkr9Q+H4wk84r5/q1ZVf2xOZk85QtP0Q/TXU22E2nd8Yfb5+3N7+ht/1+UAWaAGWAGmAFmgBlgBpgBZoAZYAaYAWaA6ZU/6UDzouNO3mwAAAAASUVORK5CYII=" alt="Credera" data-pagespeed-url-hash="616070856" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></a>
+</div>
+<div class="collapse navbar-collapse" id="craNavbarCollapse">
+<ul class="nav navbar-nav" style="">
+<li class="dropdown">
+<a id="our-firm" class="dropdown-toggle" data-toggle="dropdown">Our Firm <span class="caret"></span></a>
+<ul class="dropdown-menu" role="menu">
+<li><a id="about-nav" href="https://www.credera.com/about">About Credera</a></li>
+<li><a id="leadership-nav" href="https://www.credera.com/leadership">Leadership</a></li>
+<li><a id="news-nav" href="https://www.credera.com/blog/#/news">News &amp; Events</a></li>
+</ul>
+</li>
+<li class="dropdown">
+<a id="service-nav" class="dropdown-toggle" data-toggle="dropdown">Service Areas <span class="caret"></span></a>
+<ul class="dropdown-menu" role="menu">
+<li><a id="overview-nav" href="https://www.credera.com/service-areas-overview">Overview of Service Areas</a></li>
+<li><a id="so-nav" href="https://www.credera.com/service-area/strategy-operations">STRATEGY &amp; OPERATIONS</a></li>
+<li><a id="ai-nav" href="https://www.credera.com/service-area/analytics-insights">ANALYTICS &amp; INSIGHTS</a></li>
+<li><a id="cit-nav" href="https://www.credera.com/service-area/cloud-infrastructure-transformation">CLOUD &amp; INFRASTRUCTURE TRANSFORMATION</a></li>
+<li><a id="cec-nav" href="https://www.credera.com/service-area/customer-engagement-commerce">CUSTOMER ENGAGEMENT &amp; COMMERCE</a></li>
+<li><a id="ia-nav" href="https://www.credera.com/service-area/innovation-acceleration">INNOVATION ACCELERATION</a></li>
+<li><a id="pdd-nav" href="https://www.credera.com/service-area/product-design-development">PRODUCT DESIGN &amp; DEVELOPMENT</a></li>
+<li><a id="wm-nav" href="https://www.credera.com/service-area/workplace-modernization">WORKPLACE MODERNIZATION</a></li>
+</ul>
+</li>
+<li><a id="stories-nav" href="https://www.credera.com/client-stories">Client Stories</a></li>
+<li><a id="insights-nav" href="https://www.credera.com/blog">Insights</a></li>
+<li><a id="careers-nav" href="https://www.credera.com/careers">Careers</a></li>
+<li><a id="contact-nav" href="https://www.credera.com/contact">Contact Us</a></li>
+<li class="dropdown search-icon">
+<a id="search-nav" href="#" class="dropdown-toggle" data-toggle="dropdown"><div class="nav-img">
+<img srcset="https://www.credera.com/wp-content/themes/credera2015/images/icons/xsearch.png.pagespeed.ic.ndijPAJaxa.png" class="icon icon-search">
+</div></a>
+<div class="dropdown-menu pull-right dropdown-input" role="menu">
+<form id="globalsearch" class="ng-pristine ng-valid">
+<input id="header-search-bar" class="form-control" type="text" placeholder="Search">
+<div id="header-search-btn" class="btn btn-red">SEARCH</div>
+</form>
+</div>
+</li>
+</ul>
+</div><!-- /.navbar-collapse -->
+</div><!-- /.container-fluid -->
+</nav><!-- /.navbar -->
+</div>
+
+<div class="cra-banner single-insight-post-header" style="position: relative;">
+<picture>
+<!--[if IE 9]><video style="display: none;"><![endif]-->
+<source srcset="/wp-content/themes/credera2015/images/insight-thumbnail/Blog-Header-Default.jpg" media="(min-width: 480px)">
+<!--[if IE 9]></video><![endif]-->
+<div class="insights-banner" style="background-image:linear-gradient(rgba(0,0,0,.0),rgba(0,0,0,.7)) , url(/wp-content/themes/credera2015/images/insight-thumbnail/Blog-Header-Default.jpg.pagespeed.ce.yxvlINnghQ.jpg)"></div>
+</picture>
+<div class="container header-container" style="visibility:hidden">
+<div class="row no-margin">
+<div class="col-sm-12 col-md-8 col-md-offset-2">
+<header class="article-header">
+<h1 class="entry-title single-title" itemprop="headline" property="headline">MongoDB Explained in 5 Minutes or Less</h1>
+</header> <!-- end article header -->
+</div>
+</div>
+</div>
+</div>
+<div id="single-insight" class="container" style="visibility:hidden">
+<div class="row no-margin">
+<div class="col-sm-12 col-md-8 col-md-offset-2">
+<div class="row no-margin post-meta">
+<ul class="col-sm-6 col-xs-12 authors no-padding-right">
+<li class="author">
+<div class="entry_author_image"><img src="MongoDB%20Explained%20in%205%20Minutes%20or%20Less%20-%20Credera_files/xmwilson40credera.jpg" alt="Michael Wilson" data-pagespeed-url-hash="227414985" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></div>
+<div class="author-name">Michael Wilson </div>
+</li></ul>
+<div class="col-sm-3 col-xs-6 published-date">
+<time datetime="2014-01-30" property="datePublished" pubdate="">January 30, 2014</time>
+</div>
+<div class="col-sm-3 col-xs-6 comment-count">
+<a href="https://www.credera.com/blog/technology-insights/java/mongodb-explained-5-minutes-less/#disqus_thread" data-disqus-identifier="9869 http://www.credera.com/blog/?p=9869">0 Comments</a>
+</div>
+</div>
+<section class="entry-content service-offering-text-block clearfix" itemprop="articleBody" property="articleBody" ng-non-bindable="">
+<p>MongoDB is a document-oriented database and is currently the most 
+popular NoSQL database on the market. Let’s take a quick look at 
+MongoDB, its main features, and how it’s being used.</p>
+<h3><b>What’s MongoDB?</b></h3>
+<p>Similar to how relational databases are based on tables, 
+document-oriented databases such as MongoDB are based on collection of 
+documents, with each of these documents consisting of key/value 
+attributes.&nbsp; A single document can be thought of as the equivalent 
+of a row in a table, with each key being similar to a column name and 
+each key’s value being similar to the respective row’s value. The main 
+difference being that a document is not constrained to a certain schema 
+or columns within a table.&nbsp; Two documents could share similar 
+elements, like an ID field, as well as having completely different 
+elements.&nbsp; For instance, in an inventory system all items will have
+ a price, but automotive parts will have additional attributes that are 
+completely different than the additional attributes that shoes would 
+have.&nbsp; And because MongoDB allows for dynamic schema changes, it’s 
+easy to make agile changes without having to remodel the existing 
+database in order to support the new fields, such as adding a new 
+inventory product with its own unique set of attributes.&nbsp;&nbsp; 
+Additionally, the hierarchy of documents map easily to object 
+hierarchies within application code, simplifying create, read, update, 
+and delete operations.</p>
+<p>MongoDB not only provides all these capabilities, but it does so 
+without impacting performance, high availability or scalability. In 
+fact, MongoDB outperforms many traditional RDBMS with excellent 
+mirroring and auto-scaling features, allowing it to grow as needs and 
+data change over time.</p>
+<h3><strong>Common Use Cases</strong></h3>
+<ul>
+<li><b>Content Management and Delivery</b> – Manage a diverse product 
+catalog of content in a single data store that allows for quick changes 
+and rapid response times without additional complexity from content 
+retrieval systems.</li>
+</ul>
+<ul>
+<li><b>Mobile and Social Infrastructure</b> – MongoDB provides a 
+high-availability, low-latency, agile, and scalable platform that allows
+ for geospatial capabilities, real-time analytics, and global 
+availability.</li>
+</ul>
+<ul>
+<li><b>Customer Data Management </b>&nbsp;– Utilize rich querying 
+capabilities for real-time analytics on massive user bases with complex 
+data models by using dynamic schemas and auto-sharding for horizontal 
+scaling.</li>
+</ul>
+<h3><strong>Key Features</strong></h3>
+<ul>
+<li><b>Dynamic Schemas</b> – MongoDB’s dynamic schema provides a simple 
+way to incorporate changes as application requirements change.&nbsp; 
+These changes can be made to the database without affecting existing 
+data or application code and without incurring downtime.</li>
+</ul>
+<ul>
+<li><b>Operational Intelligence</b> – MongoDB’s native map/reduce and 
+aggregation framework provides insights in real-time for applications, 
+going beyond the capabilities of batch analytics technologies like 
+Hadoop and traditional BI tools.</li>
+</ul>
+<ul>
+<li><b>Deployment Flexibility</b> – MongoDB was built to work with 
+commodity hardware and cloud architectures. Data is localized for 
+queries to ensure performance is robust and predictable regardless of 
+deployment size.</li>
+</ul>
+<ul>
+<li><b>Simple Scale-Out</b> – MongoDB is designed to be scaled across 
+server clusters. As data volumes grow, organizations can simply add more
+ nodes to their clusters, and MongoDB will balance the data seamlessly 
+and automatically in the background.</li>
+</ul>
+<ul>
+<li><b>Rich Querying</b> –&nbsp; MongoDB supports a full query language 
+and primary and secondary indexing, as well as full text search with 
+Google-like syntax.</li>
+</ul>
+<h3><strong>Companies Using MongoDB</strong></h3>
+<p>MongoDB already serves many Fortune 500 and Global 500 companies 
+across financial, government, healthcare, media and entertainment, 
+retail, and telecommunications industries.&nbsp; Here are a few examples
+ of how some companies have incorporated MongoDB into their business:</p>
+<ul>
+<li><b>Forbes</b> – Utilized MongoDB to aggregate and integrate dynamic 
+content from their static and siloed data stores in order to update and 
+control content on their website.&nbsp; Because they MongoDB is open 
+source, they were able to do so with minimal funding or additional 
+staffing.</li>
+</ul>
+<ul>
+<li><b>MetLife</b> – Used MongoDB as the data engine for “The Wall,” an 
+innovative customer service application similar to the Facebook user 
+interface, which provides a consolidated view of MetLife customers 
+across all lines of business.&nbsp;&nbsp; A prototype was built in two 
+weeks and was live in the U.S. in 90 days.</li>
+</ul>
+<ul>
+<li><b>CERN</b> – Created a data aggregation system built on MongoDB to 
+provide search and aggregate information from a wide variety of sources 
+into a consistent, data agnostic form.&nbsp; This allows thousands of 
+users to quickly free form query against terabytes of meta-data and 
+returns tens of thousands of results.</li>
+</ul>
+<ul>
+<li><b>Under Armour</b> –&nbsp; Leveraged MongoDB at the heart of the 
+ecommerce platform to enable a flexible data infrastructure for rapidly 
+changing demands of the business, as well as meet their disaster 
+recovery and scalability needs through multi-data center replication and
+ sharding.</li>
+</ul>
+<h3><strong>Take Away</strong></h3>
+<ul>
+<li>MongoDB is the leading NoSQL database on the market and utilizes a document-oriented database.</li>
+</ul>
+<ul>
+<li>MongoDB supports the rich querying of datasets large or small with fast response times.</li>
+</ul>
+<ul>
+<li>Using dynamic schemas, MongoDB enables agile development and flexibility for application or business requirement changes.</li>
+</ul>
+<ul>
+<li>MongoDB emphasizes performance, scalability, and high availability 
+and in many cases exceeds traditional databases in these areas.</li>
+</ul>
+<ul>
+<li>MongoDB is a proven solution for a wide range of business requirements to companies across numerous industries.</li>
+</ul>
+</section> <!-- end article section -->
+<section class="post-cta">
+<hr>
+<h2 class="post-cta-header">Need help with a specific technology solution? We'd love to help.</h2>
+<hr>
+<form id="contactform-simple" class="post-cta-form form-content gray-bg ng-pristine ng-valid">
+<div class="form-wrapper">
+<div class="success">
+<div class="row">
+<div class="col-xs-12">
+<h4>Thank you for contacting us</h4>
+<h5>We appreciate that you’ve taken the time to write us. We’ll get back to you very soon.</h5>
+</div>
+</div>
+</div>
+<div class="contact-form-data">
+<div class="form-detail two-column">
+<div class="row">
+<div class="col-sm-6">
+<div class="form-element">
+<input type="text" name="name" id="contactname" placeholder="Name" class="required">
+</div>
+</div>
+<div class="col-sm-6">
+<div class="form-element">
+<input type="text" name="email" id="contactemail" placeholder="Email address" class="required">
+</div>
+</div>
+</div>
+</div>
+<div class="form-detail">
+<div class="row">
+<div class="col-xs-12">
+<div class="form-group">
+<textarea name="message" rows="3" placeholder="How can we help you?"></textarea>
+</div>
+</div>
+</div>
+</div>
+<div class="form-submit">
+<div class="row-fluid">
+<p class="errormessage"></p>
+</div>
+<div class="row">
+<div class="col-xs-12">
+<button type="submit" class="btn btn-primary">Please contact me</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</form>
+</section> <!-- end post cta section -->
+<hr>
+<div class="tag-section">
+<div class="tag-label heading-bold-uppercase">
+Posted In
+</div>
+<ul class="post-categories">
+<li><a href="https://www.credera.com/blog/category/technology-insights/java/" rel="category tag">Java</a></li>
+<li><a href="https://www.credera.com/blog/category/technology-insights/open-source-technology-insights/" rel="category tag">Open Technologies</a></li>
+<li><a href="https://www.credera.com/blog/category/technology-insights/" rel="category tag">Technology Insights</a></li>
+<li><a href="https://www.credera.com/blog/category/credera-site/" rel="category tag">Credera.com Featured</a></li>
+<li><a href="https://www.credera.com/blog/category/credera-site/featured-technology/" rel="category tag">Featured Technology</a></li>
+<li><a href="https://www.credera.com/blog/category/credera-site/featured-open/" rel="category tag">Featured Open</a></li></ul>	<div class="clearfix"></div>
+</div>
+<div class="tag-section">
+<div class="tag-label heading-bold-uppercase">
+Tags
+</div>
+<ul class="tag-cloud"><li><a href="https://www.credera.com/blog/tag/nosql-database/" rel="tag">NoSQL Database</a></li><li><a href="https://www.credera.com/blog/tag/mongodb/" rel="tag">MongoDB</a></li><li><a href="https://www.credera.com/blog/tag/operational-intelligence/" rel="tag">Operational Intelligence</a></li><li><a href="https://www.credera.com/blog/tag/dynamic-schemas/" rel="tag">Dynamic Schemas</a></li><li><a href="https://www.credera.com/blog/tag/forbes/" rel="tag">Forbes</a></li><li><a href="https://www.credera.com/blog/tag/metlife/" rel="tag">MetLife</a></li><li><a href="https://www.credera.com/blog/tag/cern/" rel="tag">CERN</a></li><li><a href="https://www.credera.com/blog/tag/under-armour/" rel="tag">Under Armour</a></li><li><a href="https://www.credera.com/blog/tag/rich-querying/" rel="tag">Rich Querying</a></li></ul>	<div class="clearfix"></div>
+</div>
+<div class="row no-margin post-meta">
+</div>
+<section id="comments">
+<div id="disqus_thread"><iframe id="dsq-app1746" name="dsq-app1746" allowtransparency="true" scrolling="no" tabindex="0" title="Disqus" style="width: 1px !important; min-width: 100% !important; border: medium none !important; overflow: hidden !important; height: 388px !important;" src="MongoDB%20Explained%20in%205%20Minutes%20or%20Less%20-%20Credera_files/a.html" horizontalscrolling="no" verticalscrolling="no" width="100%" frameborder="0"></iframe></div>
+<script type="text/javascript">var disqus_shortname="crederablog";var disqus_title="MongoDB Explained in 5 Minutes or Less";var disqus_url="https://www.credera.com/blog/technology-insights/java/mongodb-explained-5-minutes-less/";var disqus_identifier="crederablog-9869";</script>	</section>
+</div>
+</div>
+</div>
+<div class="gray-bg single-insight-footer" style="visibility:hidden">
+<div class="row no-margin text-center">
+<div class="col-xs-offset-1 col-xs-10">
+<h5 class="heading-bold-uppercase">Related Insights</h5>
+</div>
+</div>
+<div class="row center-column">
+<div class="carousel-standard carousel-blogs related-blogs ng-scope owl-carousel owl-theme owl-loaded owl-responsive-1000" ng-controller="blogCarouselCtrl">
+<!-- ngRepeat: insight in insights --><!-- end ngRepeat: insight in insights --><!-- end ngRepeat: insight in insights --><!-- end ngRepeat: insight in insights --><!-- end ngRepeat: insight in insights --><!-- end ngRepeat: insight in insights --><!-- end ngRepeat: insight in insights --><!-- end ngRepeat: insight in insights --><!-- end ngRepeat: insight in insights --><!-- end ngRepeat: insight in insights --><!-- end ngRepeat: insight in insights --><!-- end ngRepeat: insight in insights --><!-- end ngRepeat: insight in insights -->
+<div class="owl-stage-outer" style="padding-left: 0px; padding-right: 0px;"><div class="owl-stage" style="width: 5375px; transform: translate3d(-1075px, 0px, 0px); transition: all 0s ease 0s;"><div class="owl-item cloned" style="width: 233.75px; margin-right: 35px;"><div class="slider-content ng-scope" ng-repeat="insight in insights">
+<div class="post-summary">
+<span class="ng-binding">July 11th</span>
+<h4 class="ng-binding">Analytics and Insights: Drive Competitive ...</h4>
+</div>
+<p class="ng-binding">It’s common to hear that every company is now a 
+technology company. In today’s digital economy, data is the oxygen 
+fueling growth of the most competitive companies—it’s the backbone of 
+technology.
+
+The top five companies leading the SP 500 are the most well-known 
+analytical competitors in today’s marketplace. The “FAANG” companies 
+(Facebook, Amazon, Apple, Netflix, and Google) have dominated the SP 
+500, and everyone else is trying to keep up.
+
+Analytics is not new. However, the ris</p>
+<a href="https://www.credera.com/blog/technology-solutions/analytics-and-insights-drive-competitive-advantage-through-analytics/">
+<button class="btn btn-red">Read More</button>
+</a>
+</div></div><div class="owl-item cloned" style="width: 233.75px; margin-right: 35px;"><div class="slider-content ng-scope" ng-repeat="insight in insights">
+<div class="post-summary">
+<span class="ng-binding">July 6th</span>
+<h4 class="ng-binding">The Importance of Gender Intelligence</h4>
+</div>
+<p class="ng-binding">Diversity and inclusion (DI) have been relatively 
+hot topics these days. We are talking about this important issue a great
+ deal at Credera. One of the focus areas I have been involved with over 
+the past year has been gender diversity, and specifically, the concept 
+of gender intelligence.
+Gender Intelligence vs Gender Diversity
+So what is gender intelligence, and what is the difference between 
+gender diversity and gender intelligence? Think of it this way: Gender 
+diversity</p>
+<a href="https://www.credera.com/blog/type/article/importance-gender-intelligence/">
+<button class="btn btn-red">Read More</button>
+</a>
+</div></div><div class="owl-item cloned" style="width: 233.75px; margin-right: 35px;"><div class="slider-content ng-scope" ng-repeat="insight in insights">
+<div class="post-summary">
+<span class="ng-binding">May 14th</span>
+<h4 class="ng-binding">Machine Learning Applications</h4>
+</div>
+<p class="ng-binding">Extending from the first two articles in Credera’s
+ machine learning (ML) series, Machine Learning Essentials and 
+Introduction to Microsoft Machine Learning Tools, we now turn our 
+attention to how ML can drive results for businesses vi</p>
+<a href="https://www.credera.com/blog/technology-solutions/machine-learning-applications/">
+<button class="btn btn-red">Read More</button>
+</a>
+</div></div><div class="owl-item cloned" style="width: 233.75px; margin-right: 35px;"><div class="slider-content ng-scope" ng-repeat="insight in insights">
+<div class="post-summary">
+<span class="ng-binding">May 8th</span>
+<h4 class="ng-binding">Avoiding Common Innovation Pitfalls</h4>
+</div>
+<p class="ng-binding">Innovation is hard. Repeated innovation is even 
+harder. Success depends on a staggering number of factors, among them 
+whether there is a real market need, whether users will adopt the new 
+innovation, and whether users will pay. Even setting aside external 
+considerations, there are still a large number of internal questions to 
+answer: Are you selecting the right ideas to pursue? Do you have the 
+right team in place? The right oversight structure?
+
+In our experience working with a range of client</p>
+<a href="https://www.credera.com/blog/management-consulting/avoiding-common-innovation-pitfalls/">
+<button class="btn btn-red">Read More</button>
+</a>
+</div></div><div class="owl-item active" style="width: 233.75px; margin-right: 35px;"><div class="slider-content ng-scope" ng-repeat="insight in insights">
+<div class="post-summary">
+<span class="ng-binding">December 4th</span>
+<h4 class="ng-binding">Rebuilding Together</h4>
+</div>
+<p class="ng-binding">A few months ago, we had the opportunity to attend
+ Credera’s fifth build day with Rebuilding Together Houston. This 
+nonprofit organization focuses on repairing homes for low-income and 
+elderly homeowners. Over the past year, Credera has dedicated time, 
+energy, and resources to giving back to our community through this 
+partnership. Over four days, teams across our three office 
+locations—Dallas, Denver, and Houston—hav</p>
+<a href="https://www.credera.com/blog/type/article/rebuilding-together/">
+<button class="btn btn-red">Read More</button>
+</a>
+</div></div><div class="owl-item active" style="width: 233.75px; margin-right: 35px;"><div class="slider-content ng-scope" ng-repeat="insight in insights">
+<div class="post-summary">
+<span class="ng-binding">November 1st</span>
+<h4 class="ng-binding">4 Success Factors to Effective Organizational ...</h4>
+</div>
+<p class="ng-binding">In today’s rapidly changing world, the leaders who
+ make the most impact are those who have shown the ability to make 
+successful change management a reality. As speaker and growth strategist
+ Gene Hammett puts it, “A failure to change can more simply be explained
+ as a failure to grow.” According to Hammett, the ability to effectively
+ manage change is the primary indicator of company success—even more so 
+than quarterly earnings, average employee tenure, or Net Promotor 
+Scores.
+
+In a recent, I</p>
+<a href="https://www.credera.com/blog/top-post/4-success-factors-effective-organizational-change/">
+<button class="btn btn-red">Read More</button>
+</a>
+</div></div><div class="owl-item active" style="width: 233.75px; margin-right: 35px;"><div class="slider-content ng-scope" ng-repeat="insight in insights">
+<div class="post-summary">
+<span class="ng-binding">October 19th</span>
+<h4 class="ng-binding">New Ways to Leverage SharePoint and Office ...</h4>
+</div>
+<p class="ng-binding">Collaboration is becoming increasingly important 
+in the workplace. Virtually every task today requires communication with
+ others. Many business leaders are looking for solutions to enable both 
+internal and external collaboration.
+
+At Credera, we believe the future of collaboration is going to be more 
+specialized, single-focused, and will follow market demand of being 
+nimble by leveraging out-of-the-box tools with less customization. Each 
+particular solution will need to have a targeted approac</p>
+<a href="https://www.credera.com/blog/service-areas/workplace-modernization/new-ways-to-leverage-sharepoint-and-office-365-to-enable-collaboration/">
+<button class="btn btn-red">Read More</button>
+</a>
+</div></div><div class="owl-item active" style="width: 233.75px; margin-right: 35px;"><div class="slider-content ng-scope" ng-repeat="insight in insights">
+<div class="post-summary">
+<span class="ng-binding">October 9th</span>
+<h4 class="ng-binding">Application Modernization: Overcoming ...</h4>
+</div>
+<p class="ng-binding">The Earth is flat, Lotus Notes is fine, and you 
+only need 640K of RAM.
+
+What seems true at one point in time—whether it is the shape of the 
+earth, the amount of RAM a computer needs, or the state of your 
+workplace systems—may at some point change. It’s not always easy to 
+recognize the need for change, and it’s common to struggle through that 
+issue.
+
+We’ve </p>
+<a href="https://www.credera.com/blog/top-post/application-modernization-overcoming-objections-to-modernization/">
+<button class="btn btn-red">Read More</button>
+</a>
+</div></div><div class="owl-item" style="width: 233.75px; margin-right: 35px;"><div class="slider-content ng-scope" ng-repeat="insight in insights">
+<div class="post-summary">
+<span class="ng-binding">October 2nd</span>
+<h4 class="ng-binding">Strategy &amp; Operations: Helping Companies ...</h4>
+</div>
+<p class="ng-binding">At Credera our competitive advantage is our 
+people, our values, and our experience—sound familiar? We often joke 
+about how consultants (ourselves included) love to talk about strategy 
+without clearly explaining what strategy actually means to us. Here’s 
+the thing: Once you get past the buzzwords and the 200-page PowerPoint 
+decks, strategy is just the answer to one question—how do you position 
+your organization to ensure long-term financial success? 
+
+Now comes the harder part. This is</p>
+<a href="https://www.credera.com/blog/management-consulting/strategy-operations-helping-companies-drive-strong-business-performance/">
+<button class="btn btn-red">Read More</button>
+</a>
+</div></div><div class="owl-item" style="width: 233.75px; margin-right: 35px;"><div class="slider-content ng-scope" ng-repeat="insight in insights">
+<div class="post-summary">
+<span class="ng-binding">September 19th</span>
+<h4 class="ng-binding">How Data Is Creating Better Customer ...</h4>
+</div>
+<p class="ng-binding">In recent years, customer experience in the 
+digital space has improved dramatically. Uber, Amazon, Netflix, 
+Facebook, and Waze, for example, have made customer experience a key 
+differentiator. We, as consumers, receive a greater personalized 
+experience than ever before due to the information these companies 
+gather about us and our habits. With this data, they are able to 
+recommend products, target advertisements, and suggest music you may 
+enjoy (and much more).
+
+Personally, I love music and di</p>
+<a href="https://www.credera.com/blog/technology-solutions/data-creating-better-customer-experiences-spotify/">
+<button class="btn btn-red">Read More</button>
+</a>
+</div></div><div class="owl-item" style="width: 233.75px; margin-right: 35px;"><div class="slider-content ng-scope" ng-repeat="insight in insights">
+<div class="post-summary">
+<span class="ng-binding">August 3rd</span>
+<h4 class="ng-binding">Credera Anticipates Bright Future as a Member ...</h4>
+</div>
+<p class="ng-binding">We are excited to announce that Credera has joined
+ the Omnicom portfolio as a strategic part of Omnicom Precision 
+Marketing Group (OPMG), the digital and customer relationship management
+ (CRM) specialist group within Omnicom Group Inc. (NYSE:&nbsp;</p>
+<a href="https://www.credera.com/blog/type/news/credera-anticipates-bright-future-member-omnicom-group/">
+<button class="btn btn-red">Read More</button>
+</a>
+</div></div><div class="owl-item" style="width: 233.75px; margin-right: 35px;"><div class="slider-content ng-scope" ng-repeat="insight in insights">
+<div class="post-summary">
+<span class="ng-binding">July 17th</span>
+<h4 class="ng-binding">Leverage Technology to Its Fullest Potential ...</h4>
+</div>
+<p class="ng-binding">Organizations face many challenges today as they 
+try to serve their customers, shareholders, or constituents and bring 
+innovation to the marketplace. Mergers and acquisitions are common in a 
+fast-moving economy, and leaders are looking for quick integration wins 
+in weeks, not months, to start achieving synergy. In IT, capital 
+expenditures are cyclical but don’t always align with revenue trends or 
+budget priorities and chief information officers (CIOs) are often asked 
+to do more with less.
+
+Con</p>
+<a href="https://www.credera.com/blog/technology-solutions/leverage-technology-to-its-fullest-potential-via-cloud-and-infrastructure-modernization/">
+<button class="btn btn-red">Read More</button>
+</a>
+</div></div><div class="owl-item" style="width: 233.75px; margin-right: 35px;"><div class="slider-content ng-scope" ng-repeat="insight in insights">
+<div class="post-summary">
+<span class="ng-binding">July 11th</span>
+<h4 class="ng-binding">Analytics and Insights: Drive Competitive ...</h4>
+</div>
+<p class="ng-binding">It’s common to hear that every company is now a 
+technology company. In today’s digital economy, data is the oxygen 
+fueling growth of the most competitive companies—it’s the backbone of 
+technology.
+
+The top five companies leading the SP 500 are the most well-known 
+analytical competitors in today’s marketplace. The “FAANG” companies 
+(Facebook, Amazon, Apple, Netflix, and Google) have dominated the SP 
+500, and everyone else is trying to keep up.
+
+Analytics is not new. However, the ris</p>
+<a href="https://www.credera.com/blog/technology-solutions/analytics-and-insights-drive-competitive-advantage-through-analytics/">
+<button class="btn btn-red">Read More</button>
+</a>
+</div></div><div class="owl-item" style="width: 233.75px; margin-right: 35px;"><div class="slider-content ng-scope" ng-repeat="insight in insights">
+<div class="post-summary">
+<span class="ng-binding">July 6th</span>
+<h4 class="ng-binding">The Importance of Gender Intelligence</h4>
+</div>
+<p class="ng-binding">Diversity and inclusion (DI) have been relatively 
+hot topics these days. We are talking about this important issue a great
+ deal at Credera. One of the focus areas I have been involved with over 
+the past year has been gender diversity, and specifically, the concept 
+of gender intelligence.
+Gender Intelligence vs Gender Diversity
+So what is gender intelligence, and what is the difference between 
+gender diversity and gender intelligence? Think of it this way: Gender 
+diversity</p>
+<a href="https://www.credera.com/blog/type/article/importance-gender-intelligence/">
+<button class="btn btn-red">Read More</button>
+</a>
+</div></div><div class="owl-item" style="width: 233.75px; margin-right: 35px;"><div class="slider-content ng-scope" ng-repeat="insight in insights">
+<div class="post-summary">
+<span class="ng-binding">May 14th</span>
+<h4 class="ng-binding">Machine Learning Applications</h4>
+</div>
+<p class="ng-binding">Extending from the first two articles in Credera’s
+ machine learning (ML) series, Machine Learning Essentials and 
+Introduction to Microsoft Machine Learning Tools, we now turn our 
+attention to how ML can drive results for businesses vi</p>
+<a href="https://www.credera.com/blog/technology-solutions/machine-learning-applications/">
+<button class="btn btn-red">Read More</button>
+</a>
+</div></div><div class="owl-item" style="width: 233.75px; margin-right: 35px;"><div class="slider-content ng-scope" ng-repeat="insight in insights">
+<div class="post-summary">
+<span class="ng-binding">May 8th</span>
+<h4 class="ng-binding">Avoiding Common Innovation Pitfalls</h4>
+</div>
+<p class="ng-binding">Innovation is hard. Repeated innovation is even 
+harder. Success depends on a staggering number of factors, among them 
+whether there is a real market need, whether users will adopt the new 
+innovation, and whether users will pay. Even setting aside external 
+considerations, there are still a large number of internal questions to 
+answer: Are you selecting the right ideas to pursue? Do you have the 
+right team in place? The right oversight structure?
+
+In our experience working with a range of client</p>
+<a href="https://www.credera.com/blog/management-consulting/avoiding-common-innovation-pitfalls/">
+<button class="btn btn-red">Read More</button>
+</a>
+</div></div><div class="owl-item active cloned" style="width: 233.75px; margin-right: 35px;"><div class="slider-content ng-scope" ng-repeat="insight in insights">
+<div class="post-summary">
+<span class="ng-binding">December 4th</span>
+<h4 class="ng-binding">Rebuilding Together</h4>
+</div>
+<p class="ng-binding">A few months ago, we had the opportunity to attend
+ Credera’s fifth build day with Rebuilding Together Houston. This 
+nonprofit organization focuses on repairing homes for low-income and 
+elderly homeowners. Over the past year, Credera has dedicated time, 
+energy, and resources to giving back to our community through this 
+partnership. Over four days, teams across our three office 
+locations—Dallas, Denver, and Houston—hav</p>
+<a href="https://www.credera.com/blog/type/article/rebuilding-together/">
+<button class="btn btn-red">Read More</button>
+</a>
+</div></div><div class="owl-item active cloned" style="width: 233.75px; margin-right: 35px;"><div class="slider-content ng-scope" ng-repeat="insight in insights">
+<div class="post-summary">
+<span class="ng-binding">November 1st</span>
+<h4 class="ng-binding">4 Success Factors to Effective Organizational ...</h4>
+</div>
+<p class="ng-binding">In today’s rapidly changing world, the leaders who
+ make the most impact are those who have shown the ability to make 
+successful change management a reality. As speaker and growth strategist
+ Gene Hammett puts it, “A failure to change can more simply be explained
+ as a failure to grow.” According to Hammett, the ability to effectively
+ manage change is the primary indicator of company success—even more so 
+than quarterly earnings, average employee tenure, or Net Promotor 
+Scores.
+
+In a recent, I</p>
+<a href="https://www.credera.com/blog/top-post/4-success-factors-effective-organizational-change/">
+<button class="btn btn-red">Read More</button>
+</a>
+</div></div><div class="owl-item active cloned" style="width: 233.75px; margin-right: 35px;"><div class="slider-content ng-scope" ng-repeat="insight in insights">
+<div class="post-summary">
+<span class="ng-binding">October 19th</span>
+<h4 class="ng-binding">New Ways to Leverage SharePoint and Office ...</h4>
+</div>
+<p class="ng-binding">Collaboration is becoming increasingly important 
+in the workplace. Virtually every task today requires communication with
+ others. Many business leaders are looking for solutions to enable both 
+internal and external collaboration.
+
+At Credera, we believe the future of collaboration is going to be more 
+specialized, single-focused, and will follow market demand of being 
+nimble by leveraging out-of-the-box tools with less customization. Each 
+particular solution will need to have a targeted approac</p>
+<a href="https://www.credera.com/blog/service-areas/workplace-modernization/new-ways-to-leverage-sharepoint-and-office-365-to-enable-collaboration/">
+<button class="btn btn-red">Read More</button>
+</a>
+</div></div><div class="owl-item active cloned" style="width: 233.75px; margin-right: 35px;"><div class="slider-content ng-scope" ng-repeat="insight in insights">
+<div class="post-summary">
+<span class="ng-binding">October 9th</span>
+<h4 class="ng-binding">Application Modernization: Overcoming ...</h4>
+</div>
+<p class="ng-binding">The Earth is flat, Lotus Notes is fine, and you 
+only need 640K of RAM.
+
+What seems true at one point in time—whether it is the shape of the 
+earth, the amount of RAM a computer needs, or the state of your 
+workplace systems—may at some point change. It’s not always easy to 
+recognize the need for change, and it’s common to struggle through that 
+issue.
+
+We’ve </p>
+<a href="https://www.credera.com/blog/top-post/application-modernization-overcoming-objections-to-modernization/">
+<button class="btn btn-red">Read More</button>
+</a>
+</div></div></div></div><div class="owl-controls"><div class="owl-nav"><div class="owl-prev" style=""></div><div class="owl-next" style=""></div></div><div style="display: none;" class="owl-dots"></div></div></div>
+<div class="related-insights-data hide" data-category="[&quot;java&quot;,&quot;open-source-technology-insights&quot;,&quot;technology-insights&quot;,&quot;credera-site&quot;,&quot;featured-technology&quot;,&quot;featured-open&quot;]" data-filter-by-category="false">
+</div>
+</div>
+<div class="row no-margin text-center">
+<div class="col-xs-offset-1 col-xs-10">
+<h5 class="heading-bold-uppercase">More Client Success Stories</h5>
+</div>
+</div>
+<div class="row no-margin ng-scope" ng-controller="clientStoriesCarouselCtrl" style="display: block;">
+<div class="carousel-client-stories owl-carousel owl-theme owl-center owl-loaded owl-responsive-700">
+<!-- ngRepeat: story in clientStories --><!-- end ngRepeat: story in clientStories --><!-- end ngRepeat: story in clientStories --><!-- end ngRepeat: story in clientStories --><!-- end ngRepeat: story in clientStories --><!-- end ngRepeat: story in clientStories --><!-- end ngRepeat: story in clientStories -->
+<div class="owl-stage-outer"><div class="owl-stage" style="width: 7000px; transform: translate3d(-1019.5px, 0px, 0px); transition: all 0s ease 0s;"><a class="owl-item cloned" style="margin-right: 0px;"><a ng-href="/?p=11474" ng-repeat="story in clientStories" class="ng-scope" href="https://www.credera.com/?p=11474">
+<img ng-src="https://www.credera.com/wp-content/uploads/2015/02/nationalgeographic_03-700x203.jpg" class="owl-lazy" onerror="this.remove()" alt="" src="MongoDB%20Explained%20in%205%20Minutes%20or%20Less%20-%20Credera_files/nationalgeographic_03-700x203.jpg">
+<div class="slider-content focus-text-block-white">
+<div class="slider-header">
+<div class="logo">
+<img ng-src="/wp-content/uploads/2015/02/national-geographic11.png" onerror="this.remove()" alt="logo" src="MongoDB%20Explained%20in%205%20Minutes%20or%20Less%20-%20Credera_files/national-geographic11.png">
+</div>
+</div>
+<h1 class="headline ng-binding">A Mobile-Optimized Store for National Geographic</h1>
+<p class="sub-headline ng-binding">Improved Customer Experience and Increased Online Sales</p>
+</div>
+</a></a><a class="owl-item cloned" style="margin-right: 0px;"><a ng-href="/?p=10903" ng-repeat="story in clientStories" class="ng-scope" href="https://www.credera.com/?p=10903">
+<img ng-src="https://www.credera.com/wp-content/uploads/2015/02/interstatebatteries_03-700x203.jpg" class="owl-lazy" onerror="this.remove()" alt="" src="MongoDB%20Explained%20in%205%20Minutes%20or%20Less%20-%20Credera_files/interstatebatteries_03-700x203.jpg">
+<div class="slider-content focus-text-block-white">
+<div class="slider-header">
+<div class="logo">
+<img ng-src="/wp-content/uploads/2015/02/interstate-batteries1.png" onerror="this.remove()" alt="logo" src="MongoDB%20Explained%20in%205%20Minutes%20or%20Less%20-%20Credera_files/interstate-batteries1.png">
+</div>
+</div>
+<h1 class="headline ng-binding">Transformational Change to Interstate Batteries</h1>
+<p class="sub-headline ng-binding">Market-Driven Strategy and Solution for Revenue Growth</p>
+</div>
+</a></a><a class="owl-item center" style="margin-right: 0px;"><a ng-href="/?p=12562" ng-repeat="story in clientStories" class="ng-scope" href="https://www.credera.com/?p=12562">
+<img ng-src="https://www.credera.com/wp-content/uploads/2015/11/chilis-hero1-700x203.jpg" class="owl-lazy" onerror="this.remove()" alt="" src="MongoDB%20Explained%20in%205%20Minutes%20or%20Less%20-%20Credera_files/chilis-hero1-700x203.jpg">
+<div class="slider-content focus-text-block-white">
+<div class="slider-header">
+<div class="logo">
+<img ng-src="/wp-content/uploads/2015/11/Chilis-Logo-white1.png" onerror="this.remove()" alt="logo" src="MongoDB%20Explained%20in%205%20Minutes%20or%20Less%20-%20Credera_files/Chilis-Logo-white1.png">
+</div>
+</div>
+<h1 class="headline ng-binding">Chili's Digital Transformation</h1>
+<p class="sub-headline ng-binding">Increased Online Orders by 55% </p>
+</div>
+</a></a><a class="owl-item" style="margin-right: 0px;"><a ng-href="/?p=10892" ng-repeat="story in clientStories" class="ng-scope" href="https://www.credera.com/?p=10892">
+<img ng-src="https://www.credera.com/wp-content/uploads/2015/02/pepboys_03-700x203.jpg" class="owl-lazy" onerror="this.remove()" alt="" src="MongoDB%20Explained%20in%205%20Minutes%20or%20Less%20-%20Credera_files/pepboys_03-700x203.jpg">
+<div class="slider-content focus-text-block-white">
+<div class="slider-header">
+<div class="logo">
+<img ng-src="/wp-content/uploads/2015/02/pep-boys1.png" onerror="this.remove()" alt="logo" src="MongoDB%20Explained%20in%205%20Minutes%20or%20Less%20-%20Credera_files/pep-boys1.png">
+</div>
+</div>
+<h1 class="headline ng-binding">Pep Boys' Vision Comes to Life</h1>
+<p class="sub-headline ng-binding">Customers Win With Pep Boys’ Omni-channel Experience</p>
+</div>
+</a></a><a class="owl-item" style="margin-right: 0px;"><a ng-href="/?p=15143" ng-repeat="story in clientStories" class="ng-scope" href="https://www.credera.com/?p=15143">
+<img ng-src="https://www.credera.com/wp-content/uploads/2016/10/Golds2-Story-700x203.jpg" class="owl-lazy" onerror="this.remove()" alt="" src="MongoDB%20Explained%20in%205%20Minutes%20or%20Less%20-%20Credera_files/Golds2-Story-700x203.jpg">
+<div class="slider-content focus-text-block-white">
+<div class="slider-header">
+<div class="logo">
+<img ng-src="/wp-content/uploads/2016/10/GG-LOGO-White.png" onerror="this.remove()" alt="logo" src="MongoDB%20Explained%20in%205%20Minutes%20or%20Less%20-%20Credera_files/GG-LOGO-White.png">
+</div>
+</div>
+<h1 class="headline ng-binding">Gold's Gym's Winning Digital Experience</h1>
+<p class="sub-headline ng-binding">Gold’s Gym uses digital to improve the fitness experience.</p>
+</div>
+</a></a><a class="owl-item" style="margin-right: 0px;"><a ng-href="/?p=15148" ng-repeat="story in clientStories" class="ng-scope" href="https://www.credera.com/?p=15148">
+<img ng-src="https://www.credera.com/wp-content/uploads/2016/10/OTB1-Story-700x203.jpg" class="owl-lazy" onerror="this.remove()" alt="" src="MongoDB%20Explained%20in%205%20Minutes%20or%20Less%20-%20Credera_files/OTB1-Story-700x203.jpg">
+<div class="slider-content focus-text-block-white">
+<div class="slider-header">
+<div class="logo">
+<img ng-src="/wp-content/uploads/2016/10/OTB-LOGO-White.png" onerror="this.remove()" alt="logo" src="MongoDB%20Explained%20in%205%20Minutes%20or%20Less%20-%20Credera_files/OTB-LOGO-White.png">
+</div>
+</div>
+<h1 class="headline ng-binding">On The Border's Digital Experience</h1>
+<p class="sub-headline ng-binding">Strategic re-platform and redesign drives results</p>
+</div>
+</a></a><a class="owl-item" style="margin-right: 0px;"><a ng-href="/?p=11474" ng-repeat="story in clientStories" class="ng-scope" href="https://www.credera.com/?p=11474">
+<img ng-src="https://www.credera.com/wp-content/uploads/2015/02/nationalgeographic_03-700x203.jpg" class="owl-lazy" onerror="this.remove()" alt="" src="MongoDB%20Explained%20in%205%20Minutes%20or%20Less%20-%20Credera_files/nationalgeographic_03-700x203.jpg">
+<div class="slider-content focus-text-block-white">
+<div class="slider-header">
+<div class="logo">
+<img ng-src="/wp-content/uploads/2015/02/national-geographic11.png" onerror="this.remove()" alt="logo" src="MongoDB%20Explained%20in%205%20Minutes%20or%20Less%20-%20Credera_files/national-geographic11.png">
+</div>
+</div>
+<h1 class="headline ng-binding">A Mobile-Optimized Store for National Geographic</h1>
+<p class="sub-headline ng-binding">Improved Customer Experience and Increased Online Sales</p>
+</div>
+</a></a><a class="owl-item" style="margin-right: 0px;"><a ng-href="/?p=10903" ng-repeat="story in clientStories" class="ng-scope" href="https://www.credera.com/?p=10903">
+<img ng-src="https://www.credera.com/wp-content/uploads/2015/02/interstatebatteries_03-700x203.jpg" class="owl-lazy" onerror="this.remove()" alt="" src="MongoDB%20Explained%20in%205%20Minutes%20or%20Less%20-%20Credera_files/interstatebatteries_03-700x203.jpg">
+<div class="slider-content focus-text-block-white">
+<div class="slider-header">
+<div class="logo">
+<img ng-src="/wp-content/uploads/2015/02/interstate-batteries1.png" onerror="this.remove()" alt="logo" src="MongoDB%20Explained%20in%205%20Minutes%20or%20Less%20-%20Credera_files/interstate-batteries1.png">
+</div>
+</div>
+<h1 class="headline ng-binding">Transformational Change to Interstate Batteries</h1>
+<p class="sub-headline ng-binding">Market-Driven Strategy and Solution for Revenue Growth</p>
+</div>
+</a></a><a class="owl-item center cloned" style="margin-right: 0px;"><a ng-href="/?p=12562" ng-repeat="story in clientStories" class="ng-scope" href="https://www.credera.com/?p=12562">
+<img ng-src="https://www.credera.com/wp-content/uploads/2015/11/chilis-hero1-700x203.jpg" class="owl-lazy" onerror="this.remove()" alt="" src="MongoDB%20Explained%20in%205%20Minutes%20or%20Less%20-%20Credera_files/chilis-hero1-700x203.jpg">
+<div class="slider-content focus-text-block-white">
+<div class="slider-header">
+<div class="logo">
+<img ng-src="/wp-content/uploads/2015/11/Chilis-Logo-white1.png" onerror="this.remove()" alt="logo" src="MongoDB%20Explained%20in%205%20Minutes%20or%20Less%20-%20Credera_files/Chilis-Logo-white1.png">
+</div>
+</div>
+<h1 class="headline ng-binding">Chili's Digital Transformation</h1>
+<p class="sub-headline ng-binding">Increased Online Orders by 55% </p>
+</div>
+</a></a><a class="owl-item cloned" style="margin-right: 0px;"><a ng-href="/?p=10892" ng-repeat="story in clientStories" class="ng-scope" href="https://www.credera.com/?p=10892">
+<img ng-src="https://www.credera.com/wp-content/uploads/2015/02/pepboys_03-700x203.jpg" class="owl-lazy" onerror="this.remove()" alt="" src="MongoDB%20Explained%20in%205%20Minutes%20or%20Less%20-%20Credera_files/pepboys_03-700x203.jpg">
+<div class="slider-content focus-text-block-white">
+<div class="slider-header">
+<div class="logo">
+<img ng-src="/wp-content/uploads/2015/02/pep-boys1.png" onerror="this.remove()" alt="logo" src="MongoDB%20Explained%20in%205%20Minutes%20or%20Less%20-%20Credera_files/pep-boys1.png">
+</div>
+</div>
+<h1 class="headline ng-binding">Pep Boys' Vision Comes to Life</h1>
+<p class="sub-headline ng-binding">Customers Win With Pep Boys’ Omni-channel Experience</p>
+</div>
+</a></a></div></div><div class="owl-controls"><div class="owl-nav"><div class="owl-prev" style=""></div><div class="owl-next" style=""></div></div><div style="display: none;" class="owl-dots"></div></div></div>
+</div>
+</div>
+<!-- main-content-wrapper -->
+<div id="footer" class="footer-pattern" style="">
+<div class="row-fluid">
+<!-- <div class="col-md-12"> -->
+<nav class="footer-nav" role="navigation">
+<!-- <div class="container-fluid"> -->
+<div class="center-column">
+<ul class="nav navbar-nav">
+<li><a href="https://www.credera.com/about">Our Firm</a></li>
+<li><a href="https://www.credera.com/service-areas-overview">Service Areas</a></li>
+<li><a href="https://www.credera.com/client-stories">Client Stories</a></li>
+<li><a href="https://www.credera.com/blog/#/news">Insights</a></li>
+<li><a href="https://www.credera.com/careers">Careers</a></li>
+<li><a href="https://www.credera.com/contact">Contact</a></li>
+<li><a href="https://www.credera.com/blog/#/news">News &amp; Events</a></li>
+</ul>
+</div>
+<!-- Brand and toggle get grouped for better mobile display -->
+<!-- </div>/.container-fluid -->
+</nav><!-- /.navbar -->
+<!-- </div> -->
+</div>
+<div class="row center-column email-updates">
+<a id="subscribe"></a>
+<p class="subscribe-text">Subscribe to receive email updates from Credera:</p>
+<form class="form-inline ng-pristine ng-valid" name="subscribeForm">
+<input type="hidden" name="path" value="https://www.credera.com/wp-content/themes/credera2015/component/email-subscribe.php">
+<div class="form-group">
+<label class="sr-only" for="subscribeName">Name</label>
+<input type="text" class="form-control" id="subscribeName" placeholder="Name" name="flname">
+<label class="form-control-error newsletter-errormessage-name hide hidden-sm hidden-md hidden-lg"></label>
+</div>
+<div class="form-group">
+<label class="sr-only" for="subscribeEmail">Email Address</label>
+<input type="email" class="form-control" id="subscribeEmail" placeholder="Email Address" name="email">
+<label class="form-control-error newsletter-errormessage-email hide hidden-sm hidden-md hidden-lg"></label>
+</div>
+<div class="form-group">
+<input class="btn-gray btn btn-inline" type="submit" value="Subscribe">
+</div>
+<div id="newsletter-error-container">
+<div class="form-group hidden-xs">
+<label class="form-control-error newsletter-errormessage-name"></label>
+</div>
+<div class="form-group hidden-xs">
+<label class="form-control-error newsletter-errormessage-email"></label>
+</div>
+</div>
+</form>
+</div>
+<hr>
+<div class="row center-column locations">
+<div class="location col-xs-12 col-sm-6 col-md-3">
+<img class="icon" srcset="https://www.credera.com/wp-content/themes/credera2015/images/icons/xicon_map-marker.png.pagespeed.ic.zeE0PccWCO.png">
+<div class="address">
+<div class="location-header">Dallas</div>
+<p>The Colonnade<br>
+15303 Dallas Parkway<br>
+Suite 300<br>
+Addison, TX 75001<br>
+972.692.0010<br>
+<a href="https://www.google.com/maps/place/15303+Dallas+Pkwy+%23300,+Addison,+TX+75001" target="_blank">View On Map</a></p>
+</div>
+</div>
+<div class="location col-xs-12 col-sm-6 col-md-3">
+<img class="icon" srcset="https://www.credera.com/wp-content/themes/credera2015/images/icons/xicon_map-marker.png.pagespeed.ic.zeE0PccWCO.png">
+<div class="address">
+<div class="location-header">Denver</div>
+<p>Denver Place<br>
+999 18th Street<br>
+Suite 1360-S<br>
+Denver, CO 80202<br>
+303.623.1344<br>
+<a href="https://www.google.com/maps/place/Credera/@39.749459,-105.0015501,15z/data=!4m8!1m2!2m1!1sCredera+Denver!3m4!1s0x876c78d98e89e51b:0xad214fa729b66011!8m2!3d39.7494013!4d-104.9909133" target="_blank">View On Map</a></p>
+</div>
+</div>
+<div class="location col-xs-12 col-sm-6 col-md-3">
+<img class="icon" srcset="https://www.credera.com/wp-content/themes/credera2015/images/icons/xicon_map-marker.png.pagespeed.ic.zeE0PccWCO.png">
+<div class="address">
+<div class="location-header">Houston</div>
+<p>CityCentre Five<br>
+825 Town &amp; Country Ln.<br>
+Suite 550<br>
+Houston, TX 77024<br>
+713.496.0711<br>
+<a href="https://www.google.com/maps/place/825+Town+and+Country+St+Houston,+TX+77024" target="_blank">View On Map</a></p>
+</div>
+</div>
+<div class="location col-xs-12 col-sm-6 col-md-3">
+<img class="icon" srcset="https://www.credera.com/wp-content/themes/credera2015/images/icons/xicon_mail-envelope.png.pagespeed.ic.lmNUqjhlxQ.png">
+<div class="address">
+<div class="location-header">Get In Touch</div>
+<p>Interested in working with us? Need additional information on our services? Please reach out and <a href="https://www.credera.com/contact">let us know how we can help</a>.</p>
+</div>
+</div>
+</div>
+<div class="contact-content center-column">
+<div class="row">
+<a href="https://twitter.com/credera" target="_blank">
+<img srcset="https://www.credera.com/wp-content/themes/credera2015/images/icons/xicon_twitter.png.pagespeed.ic.lqJPieIgZS.png">
+</a>
+<a href="https://linkedin.com/company/credera" target="_blank">
+<img srcset="https://www.credera.com/wp-content/themes/credera2015/images/icons/xicon_linkedin.png.pagespeed.ic.RZz8CzHRws.png">
+</a>
+<a href="https://facebook.com/Credera" target="_blank">
+<img srcset="https://www.credera.com/wp-content/themes/credera2015/images/icons/xicon_facebook.png.pagespeed.ic.RzwWIVFaGS.png">
+</a>
+<a href="https://youtube.com/user/CrederaVideo" target="_blank">
+<img srcset="https://www.credera.com/wp-content/themes/credera2015/images/icons/xicon_youtube.png.pagespeed.ic.uWWPzKBPmM.png">
+</a>
+<a href="https://glassdoor.com/Overview/Working-at-Credera-EI_IE245498.11,18.htm" target="_blank">
+<img srcset="https://www.credera.com/wp-content/themes/credera2015/images/icons/xicon_glassdoor.png.pagespeed.ic.KKI-GvesWN.png">
+</a>
+</div>
+</div>
+<div class="row"> © Copyright 2018 Credera. All Rights Reserved v 1.03</div>
+</div>
+<script type="text/javascript" src="MongoDB%20Explained%20in%205%20Minutes%20or%20Less%20-%20Credera_files/skrollr.js"></script>
+<!-- Begin Tealium Tracking Code -->
+<script type="text/javascript">var utag_data={"site_name":"Credera","site_description":"Credera","post_title":"MongoDB Explained in 5 Minutes or Less","post_date":"2014\/01\/30","page_type":"post","post_category":["Java","Open Technologies","Technology Insights","Credera.com Featured","Featured Technology","Featured Open"],"post_tags":["NoSQL Database","MongoDB","Operational Intelligence","Dynamic Schemas","Forbes","MetLife","CERN","Under Armour","Rich Querying"]};</script><script type="text/javascript">(function(a,b,c,d){a='//tags.tiqcdn.com/utag/credera/main/prod/utag.js';b=document;c='script';d=b.createElement(c);d.src=a;d.type='text/java'+c;d.async=true;a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a);})();</script> <!-- End Tealium Tracking Code -->
+<!-- Begin Auryc Tracking Code-->
+<script data-cfasync="false" charset="utf-8">;(function(g){g.aurycReadyCb=g.aurycReadyCb||[];var d=document,i,am=d.createElement("script"),h=d.head||d.getElementsByTagName("head")[0],aex={"src":"//cdn.userty.com/118-httpscrederacom/container.js","data-cfasync":"false","async":"true","defer":"true","data-vendor":"userty","data-role":"container","charset":"utf-8"};for(var attr in aex){am.setAttribute(attr,aex[attr]);}h.appendChild(am);})(window);</script>
+<!-- End Auryc Tracking Code -->
+<!-- Begin Intercom -->
+<!-- End Intercom -->
+<!-- Begin ActiveCampaign -->
+<script type="text/javascript">var trackcmp_email=getCookieValue('ac_user');var trackcmp=document.createElement("script");trackcmp.async=true;trackcmp.type='text/javascript';trackcmp.src='//trackcmp.net/visit?actid=251891569&e='+encodeURIComponent(trackcmp_email)+'&r='+encodeURIComponent(document.referrer)+'&u='+encodeURIComponent(window.location.href);var trackcmp_s=document.getElementsByTagName("script");if(trackcmp_s.length){trackcmp_s[0].parentNode.appendChild(trackcmp);}else{var trackcmp_h=document.getElementsByTagName("head");trackcmp_h.length&&trackcmp_h[0].appendChild(trackcmp);}function getCookieValue(name){var value="; "+document.cookie;var parts=value.split("; "+name+"=");if(parts.length==2)return parts.pop().split(";").shift();}</script>
+<!-- End ActiveCampaign -->
+<script>(function(d){var tkTimeout=3000;if(window.sessionStorage){if(sessionStorage.getItem('useTypekit')==='false'){tkTimeout=0;}}var config={kitId:'mxm6idj',scriptTimeout:tkTimeout},h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+"wf-inactive";if(window.sessionStorage){sessionStorage.setItem("useTypekit","false")}},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+="wf-loading";tk.src='//use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)})(document);</script>
+<script type="text/javascript">//<![CDATA[
+var disqus_shortname='crederablog';(function(){var nodes=document.getElementsByTagName('span');for(var i=0,url;i<nodes.length;i++){if(nodes[i].className.indexOf('dsq-postid')!=-1&&nodes[i].parentNode.tagName=='A'){nodes[i].parentNode.setAttribute('data-disqus-identifier',nodes[i].getAttribute('data-dsqidentifier'));url=nodes[i].parentNode.href.split('#',1);if(url.length==1){url=url[0];}else{url=url[1];}nodes[i].parentNode.href=url+'#disqus_thread';}}var s=document.createElement('script');s.async=true;s.type='text/javascript';s.src='//'+disqus_shortname+'.disqus.com/count.js';(document.getElementsByTagName('HEAD')[0]||document.getElementsByTagName('BODY')[0]).appendChild(s);}());
+//]]></script>
+<link rel="stylesheet" id="syntax-css" href="MongoDB%20Explained%20in%205%20Minutes%20or%20Less%20-%20Credera_files/A_004.css" type="text/css" media="all">
+<link rel="stylesheet" id="disqus-css" href="MongoDB%20Explained%20in%205%20Minutes%20or%20Less%20-%20Credera_files/count.js" type="text/css" media="all">
+<script src="MongoDB%20Explained%20in%205%20Minutes%20or%20Less%20-%20Credera_files/click-to-tweet_js_ctt-script.js"></script><script>eval(mod_pagespeed_2ELZOaeXiO);</script>
+<script>eval(mod_pagespeed_UifxX8UCkC);</script>
+<script type="text/javascript" src="MongoDB%20Explained%20in%205%20Minutes%20or%20Less%20-%20Credera_files/embed.js"></script><iframe style="display: none;"></iframe>
+<script type="text/javascript" src="MongoDB%20Explained%20in%205%20Minutes%20or%20Less%20-%20Credera_files/jquery_002.js"></script>
+<script type="text/javascript" src="MongoDB%20Explained%20in%205%20Minutes%20or%20Less%20-%20Credera_files/angular.js"></script>
+<script type="text/javascript" src="MongoDB%20Explained%20in%205%20Minutes%20or%20Less%20-%20Credera_files/vendor.js"></script>
+<script type="text/javascript" src="MongoDB%20Explained%20in%205%20Minutes%20or%20Less%20-%20Credera_files/app.js"></script>
+<script>(function($){'use strict';var domElements={hero:($('.hero').length)?$('.hero'):null,textHero:($(".text-hero").length)?$(".text-hero"):null};Credera.fn.adjustHeroText=function(){var windowHeight=$(window).innerHeight();var windowWidth=$(window).innerWidth();var isHome=$('body').hasClass('home');if(domElements.textHero!==null){var textHeroOffset=(domElements.hero.height()/2)-(domElements.textHero.height()/2);if(windowWidth<=768&&isHome){}else if(windowWidth>=1024&&isHome){}else if(windowWidth>=1024&&!isHome){}else{}if(isHome){domElements.textHero.css({opacity:1});$(".text-hero h1").css({opacity:1});$(".text-hero p").css({opacity:1});}else{domElements.textHero.animate({opacity:1});$(".text-hero h1").delay(100).animate({opacity:1});$(".text-hero p").delay(300).animate({opacity:1});}$(".tint").animate({opacity:1},2000);};};setTimeout(function(){Credera.fn.adjustHeroText()},0);function checkHero(){if($(".text-hero").height()==0){Credera.fn.adjustHeroText()}else{clearInterval(interval);}}var interval;interval=setInterval(checkHero,300);$(window).resize(function(){Credera.fn.adjustHeroText();});})(jQuery);</script>
+
+
+<div class="sidebar-cta hidden-print affix" role="complementary">
+<div class="sidebar-cta-open">+</div>
+<div class="sidebar-cta-collapse">
+<a class="sidebar-cta-close">
+<span>X</span>
+</a>
+<div class="sidebar-cta-content"><p>How Executives Win at Culture and Talent</p><a type="button" class="btn btn-primary btn-lg" href="https://www.credera.com/whitepaper/culture-talent-winning-at-both/">READ NOW</a></div></div></div></body></html>
