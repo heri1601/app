@@ -19,24 +19,28 @@ function App() {
 }
 
 
+
+
 var FormComp = React.createClass({
  
  
     getInitialState: function () {
-      return {lName: '',fName:'',Name:''};
+      return {sProduct: '',sPrice: '',sImage:''};
     },
  
-    handleFNameChange:function(event){
-      this.setState({fName: event.target.value});
-    },
  
-    handleLNameChange:function(event){
-      this.setState({lName: event.target.value});
-    },
- 
+	 handleChange(e) {
+		// If you are using babel, you can use ES 6 dictionary syntax
+		// let change = { [e.target.name] = e.target.value }
+		let change = {}
+		change[e.target.name] = e.target.value
+		this.setState(change)
+	  },
+
+  
     handleClick:function(){
-        var fullName = this.state.fName + ' ' + this.state.lName;
-        this.setState({Name:fullName});
+        var fullName = this.state.sProduct + ' ' + this.state.sPrecio;
+        alert(fullName)
     },
  
     render:function(){
@@ -45,19 +49,20 @@ var FormComp = React.createClass({
                 <h2>TutsPlus - React Form Tutorial</h2>
                 <hr />
  
-                <label>First Name: </label>
-                <input type="text" value = {this.state.fName} onChange={this.handleFNameChange}  />
+                <label>Producto: </label>
+                <input type="text" name="sProduct" value = {this.state.fName} onChange={this.handleChange}  />
                 <br />
  
-                <label>Last Name: </label>
-                <input type="text" value = {this.state.lName} onChange={this.handleLNameChange}  />
+                <label>Precio: </label>
+                <input type="text" name="sPrecio" value = {this.state.lName} onChange={this.handleChange}  />
                 <br />
  
                 <input type="button" onClick={this.handleClick} value="Submit" />
  
                 <hr />
  
-                <h3>Your full name is </h3> {this.state.Name}
+                <h3>Your full product is </h3> {this.state.sProduct}
+                <h3>Your price is </h3> {this.state.sPrecio}
             </div>
         );
     }
