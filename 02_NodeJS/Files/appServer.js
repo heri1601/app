@@ -1,13 +1,21 @@
 ///https://github.com/senchalabs/connect#middleware
-
-
 var connect = require('connect');
+var dump =require('nodedump');
 var http = require('http');
 var finalhandler = require('finalhandler')
 var serveStatic = require('serve-static')
 var fs = require('fs')
-
+var url = require('url');
 var app = connect();
+const querystring = require('querystring');
+
+
+function mydump(obj,res){
+  res.writeHead(200,{"Content-Type" : "text/html"});
+  var dumpOutput=nodedump(obj);
+  res.write(dumpOutput);
+}
+
 
 //var serve = serveStatic('public/ftp', {'index': ['index.html', 'index.htm']})
 // gzip/deflate outgoing responses
@@ -22,7 +30,7 @@ var app = connect();
 
 // parse urlencoded request bodies into req.body
 var bodyParser = require('body-parser');
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({extended: true}));
 
 
 
@@ -36,7 +44,10 @@ app.use(function onerror(err, req, res, next) {
 
 
 app.use('/registrar', function fooMiddleware(req, res, next) {
-  res.end('foo!\n');
+//  mydump(req._parsedUrl.query,res);
+  var arguments = url.parse(req._parsedUrl.query, true).query;
+  mydump(arguments,res);
+  res.end();
 });
 
 
@@ -70,4 +81,5 @@ app.use(function(req, res){
 });
 
 //create node.js http server and listen on port
-http.createServer(app).listen(8080);
+httpApp=http.createServer(app).listen(8080);
+httpApp.post();

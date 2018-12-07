@@ -4,3 +4,4 @@ sudo npm install express
 sudo npm i express-middleware --save
 sudo npm install connect
 sudo npm install serve-static
+sudo npm install nodedump

@@ -43,8 +43,9 @@ var FormComp = React.createClass({
         var fullName = this.state.sProduct + ' ' + this.state.sPrecio;
         alert(fullName)
          axios.post('/registrar', {
-			firstName: 'Fred',
-			lastName: 'Flintstone'
+			inProducto: this.state.sProduct,
+			inPrecio: this.state.sPrecio,
+			inImagen: 'Flintstone'
 		  })
 		  .then(function (response) {
 			console.log(response);
