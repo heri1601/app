@@ -209,7 +209,6 @@ class Modelo {
     this.id = 'id_1';
   }
 	registrarProducto(inProducto,inPrecio,inImagen){
-		console.log("registrando negocio");
 		var dao=new DAO();
 		dao.registrarProducto(inProducto,inPrecio,inImagen);
 		}
