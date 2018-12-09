@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+
+<script>
+	var ProductosController = function($scope) {
+		$scope.inProducto = "";
+		$scope.inPrecio;
+		$scope.inImagen = "";
+		
+		$scope.registrar=function(){
+			alert(5)
+			}
+	};
+
+	// register our controller/s
+	angular.module('ProductosApp.controllers', []).controller("ProductosController", ProductosController);
+
+	// this is our global app: 
+	angular.module('ProductosApp', ['ProductosApp.controllers']);
+	
+	
+	
+	
+/*  angular.module('submitExample', []).controller('ExampleController', ['$scope', function($scope) {
+      $scope.list = [];
+      $scope.text = 'hello';
+      $scope.submit = function() {
+        if ($scope.text) {
+          $scope.list.push(this.text);
+          $scope.text = '';
+        }
+      };
+    }]);*/
+</script>
+
+<body ng-app="ProductosApp" >	
+
+
+
+<!--
+<form ng-submit="submit()" ng-controller="ProductosController">
+  
+  <input type="text" ng-model="text" name="text" />
+  <input type="submit" id="submit" value="Submit" />
+  <pre>list={{list}}</pre>
+</form>
+-->
+
+
+
+
+
+
+
+<div class="container" ng-controller="ProductosController">
+  <h2>Registro de productos</h2>
+  <form ng-submit="registrar()" >
+    <div class="form-group">
+      <label for="inProducto">Producto:</label>
+      <input type="text" class="form-control" id="inProducto" placeholder="Nombre de producto" name="inProducto" ng-model="inProducto">
+    </div>
+    <div class="form-group">
+      <label for="inPrecio">Precio:</label>
+      <input type="textx" min=0 max=1000000 step="0.01" class="form-control" id="inPrecio" placeholder="Precio del producto" name="inPrecio"  ng-model="inPrecio">
+    </div>
+    <div class="form-group">
+      <label for="inImagen">Imagen:</label>
+      <input type="file" accept="image/gif, image/jpeg, image/png" class="form-control" id="inImagen"  name="inImagen"  ng-model="inImagen">
+    </div>
+
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>
+
+{{ inProducto }}
+{{ inPrecio }}
+{{ inImagen }}
+
+
+
+
+
+<table>
+  <tr><!--this is your header row -->
+    <th ng-repeat="o in [0,1,2,3,4,5,6,7]">
+      {{o}}<!-- this is a header section, you can repeat here or use it as a title -->
+    </th>
+  </tr>
+  <tr ng-repeat="j in [0,1,2,3,4,5,6,7]"><!-- repeat the rows -->
+    <td ng-repeat="i in [0,1,2,3,4,5,6,7]"><!-- repeat the sections -->
+      {{inProducto}} <!-- here you can display i, j whatever else -->
+    </td>
+  </tr>
+
+</table>
+
+
+</div>
+
+
+
+</body>
+</html>

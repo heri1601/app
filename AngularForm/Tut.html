@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hello App</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</head>
+
+<body ng-app="HelloWorldApp" >
+	<div ng-controller="HelloController" >
+		{{ message }}
+	<input type="text" ng-model="message" />
+	</div>
+    
+	
+
+</body>
+
+
+
+
+
+
+<script>
+	var HelloController = function($scope) {
+		$scope.message = "Hello!";
+	};
+
+	// register our controller/s
+	angular.module('HelloWorldApp.controllers', []).controller("HelloController", HelloController);
+
+	// this is our global app: 
+	angular.module('HelloWorldApp', ['HelloWorldApp.controllers']);
+</script>
+</html>
