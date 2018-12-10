@@ -46,9 +46,9 @@ app.get('/js', urlencodedParser, function (req, res) {
 })
 
 
-app.get('/registrar', urlencodedParser, function (req, res) {
+app.post('/registrar', urlencodedParser, function (req, res) {
+	console.log("registrando");
 	convertParameters(req);
-	
 	var request={};
 	request.producto=req.query.inProducto;
 	request.precio=req.query.inPrecio;
