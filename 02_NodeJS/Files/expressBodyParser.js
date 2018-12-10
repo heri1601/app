@@ -1,4 +1,8 @@
 //npm install mongodb --save
+//Archivo dividido en tres secciones. Controlador (métodos públicos), Modelo (métodos privados) y DAO (Métodos de acceso a datos).
+//Los métodos privados del Modelo y DAO están definidos en las clases Modelo y DAO respectivamente. Los cuales se encuentran definidos en este mismo
+//archivo pero que se pretenden separar en archivos distintos.
+Estos 
 var express = require('express')
 var bodyParser = require('body-parser')
 var dump =require('nodedump');
@@ -13,26 +17,6 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
 
-
-//Method to route the index method
-/*app.get('/',urlencodedParser, function (req, res) {
-	//mydump(req.body,res);
-  //Call the index function
-  //res.send(index(req,));
-  res.send(JSON.stringify(req.body));
-  index(req,res);
-});*/
-
-//Examples
-app.get('/login', urlencodedParser, function (req, res) {
-	convertParameters(req);
-	res.send('welcome, ' + req.query.username)
-})
-
-app.post('/login', urlencodedParser, function (req, res) {
-	req=convertParameters(req);
-	res.send('welcome, ' + req.query.username)
-})
 
 
 
